@@ -10,15 +10,23 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 import { i18n } from '../../../appConfig';
 import { useStyles } from '../useStyles';
 import { useFirstStep } from './useFirstStep';
 import { Recaptcha } from '../../Recaptcha';
 
+const shouldShowError = (fieldName, formik) => (
+  !!formik.errors[fieldName] && formik.touched[fieldName]
+);
+
 export const FirstStep = ({ onSuccess }) => {
   const classes = useStyles();
-  const { formik, isLoading } = useFirstStep(onSuccess);
+  const {
+    formik,
+    isLoading,
+  } = useFirstStep(onSuccess);
 
   return (
     <Container component="main" maxWidth="xs">
@@ -47,10 +55,11 @@ export const FirstStep = ({ onSuccess }) => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
-            error={!!formik.errors.email && formik.touched.email}
+            error={shouldShowError('email', formik)}
             helperText={i18n(formik.errors.email)}
           />
           <TextField
+            className={classes.marginBottom}
             variant="outlined"
             margin="normal"
             required
@@ -63,10 +72,18 @@ export const FirstStep = ({ onSuccess }) => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}
-            error={!!formik.errors.password && formik.touched.password}
-            helperText={i18n(formik.errors.password)}
+            error={shouldShowError('password', formik)}
+            helperText={
+              shouldShowError('password', formik)
+              && i18n(formik.errors.password)
+            }
           />
           <Recaptcha />
+          {shouldShowError('isCaptchaCompleted', formik) && (
+            <FormHelperText error variant="filled">
+              {i18n(formik.errors.isCaptchaCompleted)}
+            </FormHelperText>
+          )}
           <Button
             type="submit"
             fullWidth

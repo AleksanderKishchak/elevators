@@ -7,6 +7,7 @@ const firstStepLogin = {
   GO_TO_SIGN_UP: 'Don\'t have an account? Sign Up',
   /* Error Messages */
   SHORT_PASS: 'Your password must be at least 8 symbols long',
+  NEEDS_CAPTCHA: 'Please, complete the reCAPTCHA',
 };
 
 const secondStepLogin = {

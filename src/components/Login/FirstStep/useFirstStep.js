@@ -19,6 +19,8 @@ export const useFirstStep = (onSuccess) => {
     initialValues: {
       email: '',
       password: '',
+      // Is not actually used
+      isCaptchaCompleted: false,
     },
     onSubmit,
     validate,

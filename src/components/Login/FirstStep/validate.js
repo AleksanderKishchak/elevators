@@ -5,5 +5,11 @@ export const validate = (values) => {
     errors.password = 'SHORT_PASS';
   }
 
+  const recaptchaResult = window.grecaptcha?.getResponse?.();
+
+  if (!recaptchaResult) {
+    errors.isCaptchaCompleted = 'NEEDS_CAPTCHA';
+  }
+
   return errors;
 };
