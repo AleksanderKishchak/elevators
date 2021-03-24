@@ -7,12 +7,14 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ProtectedRoute } from '../ProtectedRoute';
 import { LogInForm } from '../Login';
 import { Footer } from '../Footer';
+import { MenuAppBar } from '../Header';
 
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <MenuAppBar />
       <CssBaseline />
       <Route path="/login">
         <LogInForm />

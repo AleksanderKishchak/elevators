@@ -26,8 +26,13 @@ export const useFirstStep = (onSuccess) => {
     validate,
   });
 
+  const onRecaptchaChange = (token) => {
+    formik.setFieldValue('isCaptchaCompleted', Boolean(token));
+  };
+
   return {
     formik,
     isLoading,
+    onRecaptchaChange,
   };
 };

@@ -5,9 +5,7 @@ export const validate = (values) => {
     errors.password = 'SHORT_PASS';
   }
 
-  const recaptchaResult = window.grecaptcha?.getResponse?.();
-
-  if (!recaptchaResult) {
+  if (!values.isCaptchaCompleted) {
     errors.isCaptchaCompleted = 'NEEDS_CAPTCHA';
   }
 

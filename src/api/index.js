@@ -1,3 +1,5 @@
+import user from '../mocks/user.json';
+
 const delay = (ms) => new Promise((resolve) => {
   setTimeout(resolve, ms);
 });
@@ -8,4 +10,4 @@ const delayMs = 1000;
 export const postLogin = (login, pass) => delay(delayMs);
 
 // eslint-disable-next-line no-unused-vars
-export const postAuthCode = (code) => delay(delayMs);
+export const postAuthCode = (code) => delay(delayMs).then(() => Promise.resolve(user));

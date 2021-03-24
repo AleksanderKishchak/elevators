@@ -1,0 +1,21 @@
+{
+  "userId": 0,
+  "isAdmin": true,
+  "firstName": "Alex",
+  "lastName": "Kishchak",
+  "address": "Kosmichna st, building 90",
+  "markers": [
+    {
+      "id": 0,
+      "name": "first marker"
+    },
+    {
+      "id": 0,
+      "name": "first marker"
+    },
+    {
+      "id": 0,
+      "name": "first marker"
+    }
+  ]
+}

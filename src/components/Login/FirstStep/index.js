@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReCAPTCHA from 'react-google-recaptcha';
+
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -11,11 +13,11 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import { useTheme } from '@material-ui/core/styles';
 
 import { i18n } from '../../../appConfig';
 import { useStyles } from '../useStyles';
 import { useFirstStep } from './useFirstStep';
-import { Recaptcha } from '../../Recaptcha';
 
 const shouldShowError = (fieldName, formik) => (
   !!formik.errors[fieldName] && formik.touched[fieldName]
@@ -23,9 +25,11 @@ const shouldShowError = (fieldName, formik) => (
 
 export const FirstStep = ({ onSuccess }) => {
   const classes = useStyles();
+  const theme = useTheme();
   const {
     formik,
     isLoading,
+    onRecaptchaChange,
   } = useFirstStep(onSuccess);
 
   return (
@@ -78,7 +82,11 @@ export const FirstStep = ({ onSuccess }) => {
               && i18n(formik.errors.password)
             }
           />
-          <Recaptcha />
+          <ReCAPTCHA
+            onChange={onRecaptchaChange}
+            sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+            theme={theme.palette.type}
+          />
           {shouldShowError('isCaptchaCompleted', formik) && (
             <FormHelperText error variant="filled">
               {i18n(formik.errors.isCaptchaCompleted)}

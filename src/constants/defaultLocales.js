@@ -1,5 +1,6 @@
 const firstStepLogin = {
   SIGN_IN: 'Sign in',
+  LOG_OUT: 'Log out',
   EMAIL_ADDRESS_LABEL: 'Email Address',
   PASSWORD_LABEL: 'Password',
   REMEMBER_ME_LABEL: 'Remember me',
@@ -15,7 +16,13 @@ const secondStepLogin = {
   SEND_CODE: 'Send confirmation code',
 };
 
+const generalInfo = {
+  APP_NAME: 'Elevators',
+  SWITCH_THEME: 'Toggle light/dark theme',
+};
+
 export default {
   ...firstStepLogin,
   ...secondStepLogin,
+  ...generalInfo,
 };
