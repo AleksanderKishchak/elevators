@@ -18,7 +18,12 @@ export const LogInForm = () => {
 
   const onSuccessSecondStep = (userData) => {
     setUser(userData);
-    history.push('/');
+
+    const newLocation = userData.isAdmin
+      ? '/'
+      : '/my-account';
+
+    history.push(newLocation);
   };
 
   return (

@@ -82,11 +82,13 @@ export const FirstStep = ({ onSuccess }) => {
               && i18n(formik.errors.password)
             }
           />
-          <ReCAPTCHA
-            onChange={onRecaptchaChange}
-            sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
-            theme={theme.palette.type}
-          />
+          <div className="flex-center">
+            <ReCAPTCHA
+              onChange={onRecaptchaChange}
+              sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+              theme={theme.palette.type}
+            />
+          </div>
           {shouldShowError('isCaptchaCompleted', formik) && (
             <FormHelperText error variant="filled">
               {i18n(formik.errors.isCaptchaCompleted)}

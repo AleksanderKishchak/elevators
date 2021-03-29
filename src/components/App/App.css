@@ -1,0 +1,8 @@
+.table-container {
+    margin-top: 40px;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}

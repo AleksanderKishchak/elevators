@@ -8,6 +8,7 @@ import { ProtectedRoute } from '../ProtectedRoute';
 import { LogInForm } from '../Login';
 import { Footer } from '../Footer';
 import { MenuAppBar } from '../Header';
+import { MyAccount } from '../MyAccount';
 
 import './App.css';
 
@@ -24,6 +25,10 @@ function App() {
         <div>
           main list
         </div>
+      </ProtectedRoute>
+
+      <ProtectedRoute path="/my-account">
+        <MyAccount />
       </ProtectedRoute>
       <Footer />
     </Router>

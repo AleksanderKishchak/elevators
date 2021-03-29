@@ -14,6 +14,8 @@ const firstStepLogin = {
 const secondStepLogin = {
   SECOND_STEP_LABEL: 'Confirmation code',
   SEND_CODE: 'Send confirmation code',
+  REQUEST_ERROR: 'Oops, something went wrong. Please try again.',
+  RELOAD_PAGE: 'Reload Page',
 };
 
 const generalInfo = {
@@ -21,8 +23,19 @@ const generalInfo = {
   SWITCH_THEME: 'Toggle light/dark theme',
 };
 
+const myAccTable = {
+  ROW_NAME: 'Name',
+  ROW_ADDRESS_STREET: 'Street',
+  ROW_ADDRESS_ENTRANCE: 'Entrance №',
+  ROW_ADDRESS_FLAT: 'Flat №',
+  ROW_STATUS_IS_PAID: 'Status',
+  STATUS_PAID: 'Paid',
+  STATUS_UNPAID: 'Not Paid',
+};
+
 export default {
   ...firstStepLogin,
   ...secondStepLogin,
   ...generalInfo,
+  ...myAccTable,
 };

@@ -1,21 +1,14 @@
 {
-  "userId": 0,
-  "isAdmin": true,
+  "id": 0,
+  "isAdmin": false,
   "firstName": "Alex",
   "lastName": "Kishchak",
-  "address": "Kosmichna st, building 90",
-  "markers": [
-    {
-      "id": 0,
-      "name": "first marker"
-    },
-    {
-      "id": 0,
-      "name": "first marker"
-    },
-    {
-      "id": 0,
-      "name": "first marker"
-    }
-  ]
+  "address": {
+    "street": "Kosmichna 90",
+    "entrance": "1",
+    "room": "20"
+  },
+  "status": {
+    "isPaid": true
+  }
 }
