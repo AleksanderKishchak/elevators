@@ -9,6 +9,7 @@ import { LogInForm } from '../Login';
 import { Footer } from '../Footer';
 import { MenuAppBar } from '../Header';
 import { MyAccount } from '../MyAccount';
+import { AdminPage } from '../AdminPage';
 
 import './App.css';
 
@@ -28,9 +29,7 @@ function App() {
       </ProtectedRoute>
 
       <ProtectedRoute forAdminOnly path="/buildings">
-        <div>
-          buildings
-        </div>
+        <AdminPage />
       </ProtectedRoute>
 
       <ProtectedRoute path="/my-account">

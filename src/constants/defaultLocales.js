@@ -33,9 +33,14 @@ const myAccTable = {
   STATUS_UNPAID: 'Not Paid',
 };
 
+const buildingsTable = {
+  BUILDINGS_LIST_NAME: 'Buildings list',
+};
+
 export default {
   ...firstStepLogin,
   ...secondStepLogin,
   ...generalInfo,
   ...myAccTable,
+  ...buildingsTable,
 };

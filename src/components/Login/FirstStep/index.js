@@ -87,6 +87,7 @@ export const FirstStep = ({ onSuccess }) => {
               onChange={onRecaptchaChange}
               sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
               theme={theme.palette.type}
+              hl="uk"
             />
           </div>
           {shouldShowError('isCaptchaCompleted', formik) && (

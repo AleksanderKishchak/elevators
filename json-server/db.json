@@ -1,0 +1,229 @@
+{
+  "buildings": [
+    {
+      "id": 0,
+      "street": "Ivanova 1 st"
+    },
+    {
+      "id": 1,
+      "street": "Ivanova 2 st"
+    },
+    {
+      "id": 2,
+      "street": "Ivanova 3 st"
+    }
+  ],
+  "entrances": [
+    {
+      "id": 0,
+      "name": "entrance №1",
+      "buildingId": 1
+    },
+    {
+      "id": 1,
+      "name": "entrance №2",
+      "buildingId": 1
+    },
+    {
+      "id": 3,
+      "name": "entrance №3",
+      "buildingId": 1
+    },
+
+
+    {
+      "id": 4,
+      "name": "entrance №1",
+      "buildingId": 0
+    },
+
+
+    {
+      "id": 5,
+      "name": "entrance №1",
+      "buildingId": 2
+    },
+    {
+      "id": 6,
+      "name": "entrance №2",
+      "buildingId": 2
+    }
+
+
+  ],
+  "apartments": [
+    {
+      "id": 0,
+      "floor": 1,
+      "apartmentNumber": "1",
+      "peopleLive": 3,
+      "userId": 0,
+      "entranceId": 0
+    },
+    {
+      "id": 1,
+      "floor": 1,
+      "apartmentNumber": "2",
+      "peopleLive": 2,
+      "userId": 1,
+      "entranceId": 0
+    },
+
+    {
+      "id": 2,
+      "floor": 1,
+      "apartmentNumber": "3",
+      "peopleLive": 3,
+      "userId": 2,
+      "entranceId": 1
+    },
+
+    {
+      "id": 3,
+      "floor": 1,
+      "apartmentNumber": "4",
+      "peopleLive": 1,
+      "userId": 3,
+      "entranceId": 2
+    },
+
+
+
+
+    {
+      "id": 4,
+      "floor": 1,
+      "apartmentNumber": "1",
+      "peopleLive": 3,
+      "userId": 4,
+      "entranceId": 4
+    },
+
+
+
+
+    {
+      "id": 5,
+      "floor": 1,
+      "apartmentNumber": "1",
+      "peopleLive": 3,
+      "userId": 5,
+      "entranceId": 5
+    },
+    {
+      "id": 6,
+      "floor": 1,
+      "apartmentNumber": "2",
+      "peopleLive": 3,
+      "userId": 6,
+      "entranceId": 5
+    },
+    {
+      "id": 7,
+      "floor": 1,
+      "apartmentNumber": "3",
+      "peopleLive": 3,
+      "userId": 7,
+      "entranceId": 6
+    },{
+      "id": 8,
+      "floor": 1,
+      "apartmentNumber": "4",
+      "peopleLive": 3,
+      "userId": 8,
+      "entranceId": 6
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "isAdmin": false,
+      "firstName": "Ivan 0",
+      "lastName": "Ivanov 0",
+      "apartmentId": 0,
+      "status": {
+        "isPaid": true
+      }
+    },
+    {
+      "id": 1,
+      "isAdmin": false,
+      "firstName": "Ivan 1",
+      "lastName": "Ivanov 1",
+      "apartmentId": 1,
+      "status": {
+        "isPaid": true
+      }
+    },
+    {
+      "id": 2,
+      "isAdmin": false,
+      "firstName": "Ivan 2",
+      "lastName": "Ivanov 2",
+      "apartmentId": 2,
+      "status": {
+        "isPaid": true
+      }
+    },
+    {
+      "id": 3,
+      "isAdmin": false,
+      "firstName": "Ivan 3",
+      "lastName": "Ivanov 3",
+      "apartmentId": 3,
+      "status": {
+        "isPaid": true
+      }
+    },
+    {
+      "id": 4,
+      "isAdmin": false,
+      "firstName": "Ivan 4",
+      "lastName": "Ivanov 4",
+      "apartmentId": 4,
+      "status": {
+        "isPaid": true
+      }
+    },
+    {
+      "id": 5,
+      "isAdmin": false,
+      "firstName": "Ivan 5",
+      "lastName": "Ivanov 5",
+      "apartmentId": 5,
+      "status": {
+        "isPaid": true
+      }
+    },
+    {
+      "id": 6,
+      "isAdmin": false,
+      "firstName": "Ivan 6",
+      "lastName": "Ivanov 6",
+      "apartmentId": 6,
+      "status": {
+        "isPaid": true
+      }
+    },
+    {
+      "id": 7,
+      "isAdmin": false,
+      "firstName": "Ivan 7",
+      "lastName": "Ivanov 7",
+      "apartmentId": 7,
+      "status": {
+        "isPaid": true
+      }
+    },
+    {
+      "id": 8,
+      "isAdmin": false,
+      "firstName": "Ivan 8",
+      "lastName": "Ivanov 8",
+      "apartmentId": 8,
+      "status": {
+        "isPaid": true
+      }
+    }
+  ]
+}
