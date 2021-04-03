@@ -4,6 +4,8 @@
   "firstName": "Alex",
   "lastName": "Kishchak",
   "address": {
+    "buildingId": "0",
+    "entranceId": "0",
     "street": "Kosmichna 90",
     "entrance": "1",
     "room": "20"
