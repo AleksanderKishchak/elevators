@@ -1,6 +1,6 @@
 {
   "id": 0,
-  "isAdmin": false,
+  "isAdmin": true,
   "firstName": "Alex",
   "lastName": "Kishchak",
   "address": {

@@ -23,7 +23,13 @@ function App() {
 
       <ProtectedRoute exact path="/">
         <div>
-          main list
+          root
+        </div>
+      </ProtectedRoute>
+
+      <ProtectedRoute forAdminOnly path="/buildings">
+        <div>
+          buildings
         </div>
       </ProtectedRoute>
 

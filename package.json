@@ -2,6 +2,7 @@
   "name": "elevators-template",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://aleksanderkishchak.github.io/elevators/",
   "dependencies": {
     "@babel/core": "7.12.3",
     "@material-ui/core": "^4.11.3",
@@ -75,7 +76,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -159,6 +162,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "webpack-cli": "^4.5.0"
+    "webpack-cli": "^4.5.0",
+    "gh-pages": "^3.1.0"
   }
 }
