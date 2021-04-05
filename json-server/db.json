@@ -2,15 +2,18 @@
   "buildings": [
     {
       "id": 0,
-      "street": "Ivanova 1 st"
+      "street": "Ivanova 1 st",
+      "postCode": "69050"
     },
     {
       "id": 1,
-      "street": "Ivanova 2 st"
+      "street": "Ivanova 2 st",
+      "postCode": "69000"
     },
     {
       "id": 2,
-      "street": "Ivanova 3 st"
+      "street": "Ivanova 3 st",
+      "postCode": "69000"
     }
   ],
   "entrances": [

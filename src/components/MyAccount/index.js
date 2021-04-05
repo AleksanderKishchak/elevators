@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 
 import { MyDataTable } from './components/MyDataTable';
+import { CenteredContainer } from '../CenteredContainer';
 import { getUserData } from '../../api';
 import { useAppState } from '../../hooks/useAppState';
 import { useStyles } from './useStyles';
@@ -41,7 +41,7 @@ export const MyAccount = () => {
 
   return (
     <div className="table-container flex-center">
-      <Container className={classes.center}>
+      <CenteredContainer>
         {!userData && error && (
         <>
           <div className={classes.error}>
@@ -62,7 +62,7 @@ export const MyAccount = () => {
         {!userData && !error && <CircularProgress />}
 
         {userData && !error && <MyDataTable users={[userData]} />}
-      </Container>
+      </CenteredContainer>
     </div>
   );
 };

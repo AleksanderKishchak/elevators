@@ -1,7 +1,7 @@
 import { createLocale } from './utils/locale';
-// import defaultLocales from './constants/defaultLocales';
-import defaultLocalesUKR from './constants/defaultLocalesUkr';
+import defaultLocales from './constants/defaultLocales';
+// import defaultLocales from './constants/defaultLocalesUkr';
 
-export const locale = createLocale(defaultLocalesUKR);
+export const locale = createLocale(defaultLocales);
 
 export const i18n = locale.get;

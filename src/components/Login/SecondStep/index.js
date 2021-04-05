@@ -27,7 +27,7 @@ export const SecondStep = ({ onSuccess }) => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {i18n('SEND_CODE')}
+          {i18n('SECOND_STEP_LABEL')}
         </Typography>
         <form onSubmit={formik.handleSubmit} className={classes.form}>
           <TextField

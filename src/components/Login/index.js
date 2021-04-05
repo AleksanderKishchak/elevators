@@ -20,7 +20,7 @@ export const LogInForm = () => {
     setUser(userData);
 
     const newLocation = userData.isAdmin
-      ? '/'
+      ? '/buildings'
       : '/my-account';
 
     history.push(newLocation);

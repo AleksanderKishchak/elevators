@@ -79,7 +79,8 @@
     "test": "node scripts/test.js",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
-    "start:server": "json-server --watch json-server/db.json --port 3004"
+    "start:server": "json-server --watch json-server/db.json --port 3004",
+    "start:all": "npm run start & npm run start:server"
   },
   "eslintConfig": {
     "extends": [

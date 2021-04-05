@@ -1,39 +1,55 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Box from '@material-ui/core/Box';
+import Collapse from '@material-ui/core/Collapse';
+import IconButton from '@material-ui/core/IconButton';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
-const useStyles = makeStyles((theme) => ({
+import { EntranceList } from '../EntranceList';
+
+const useRowStyles = makeStyles({
   root: {
-    width: '100%',
+    '& > *': {
+      borderBottom: 'unset',
+    },
   },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
-}));
+});
 
-export const Row = ({ building }) => {
-  const classes = useStyles();
+export const Row = ({
+  building,
+  entrances,
+  fetchEntrances,
+}) => {
+  const [open, setOpen] = useState(false);
+  const classes = useRowStyles();
 
   return (
-    <Accordion>
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon />}
-      >
-        <Typography className={classes.heading}>
+    <>
+      <TableRow className={classes.root}>
+        <TableCell>
+          <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
+            {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+          </IconButton>
+        </TableCell>
+        <TableCell component="th" scope="row">
           {building.street}
-        </Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography>
-          content with entrances
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
+        </TableCell>
+        <TableCell align="left">{building.postCode}</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+          <Collapse in={open} timeout="auto" unmountOnExit>
+            <Box margin={1}>
+              <EntranceList fetch={fetchEntrances} entrances={entrances} />
+            </Box>
+          </Collapse>
+        </TableCell>
+      </TableRow>
+    </>
   );
 };
 
@@ -41,5 +57,12 @@ Row.propTypes = {
   building: PropTypes.shape({
     id: PropTypes.number.isRequired,
     street: PropTypes.string.isRequired,
+    postCode: PropTypes.string.isRequired,
   }).isRequired,
+  entrances: PropTypes.arrayOf(PropTypes.object.isRequired),
+  fetchEntrances: PropTypes.func.isRequired,
+};
+
+Row.defaultProps = {
+  entrances: null,
 };

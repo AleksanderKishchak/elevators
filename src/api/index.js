@@ -1,4 +1,3 @@
-/* eslint-disable */
 import user from '../mocks/user.json';
 import { goTo } from '../utils/goTo';
 
@@ -55,6 +54,6 @@ export const getUserData = (userId) => delay(delayMs).then(() => {
 });
 
 // eslint-disable-next-line no-unused-vars
-export const getBuildings = (adminId) => {
-  return baseFetch('buildings')
-};
+export const getBuildings = (adminId) => delay(2000).then(() => baseFetch('buildings'));
+
+export const getEntrances = (buildingId) => delay(2000).then(() => baseFetch(`buildings/${buildingId}/entrances`));

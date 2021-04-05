@@ -2,41 +2,53 @@ import PropTypes from 'prop-types';
 
 import map from 'lodash/map';
 
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { Row } from './Row';
+import { useBuildingList } from './useBuildingList';
 import { i18n } from '../../appConfig';
 
-const useStyles = makeStyles(() => ({
-  listHeader: {
-    padding: 12,
-    marginBottom: 12,
+const useStyles = makeStyles({
+  firstColumn: {
+    width: 200,
   },
-}));
+});
 
 export const BuildingList = ({ buildings }) => {
   const classes = useStyles();
+  const { entrances, fetchEntrances } = useBuildingList();
 
   return (
-    <div className="table-container">
-      <Container>
-        <Paper className={classes.listHeader}>
-          <Typography>
-            {i18n('BUILDINGS_LIST_NAME')}
-          </Typography>
-        </Paper>
-        <div>
+    <TableContainer component={Paper}>
+      <Table aria-label="collapsible table">
+        <TableHead>
+          <TableRow>
+            <TableCell className={classes.firstColumn}>{i18n('BUILDINGS_LIST_NAME')}</TableCell>
+            <TableCell align="left">{i18n('BUILDINGS_STREET_TITLE')}</TableCell>
+            <TableCell align="left">{i18n('BUILDINGS_POST_CODE_TITLE')}</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
           {
             map(buildings, (building) => (
-              <Row key={building.id} building={building} />
+              <Row
+                key={building.id}
+                building={building}
+                entrances={entrances[building.id]}
+                fetchEntrances={() => fetchEntrances(building.id)}
+              />
             ))
           }
-        </div>
-      </Container>
-    </div>
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 

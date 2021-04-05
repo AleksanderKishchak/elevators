@@ -34,7 +34,9 @@ const myAccTable = {
 };
 
 const buildingsTable = {
-  BUILDINGS_LIST_NAME: 'Buildings list',
+  BUILDINGS_LIST_NAME: 'Buildings',
+  BUILDINGS_STREET_TITLE: 'Street',
+  BUILDINGS_POST_CODE_TITLE: 'Post code',
 };
 
 export default {

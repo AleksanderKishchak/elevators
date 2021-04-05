@@ -29,5 +29,5 @@ export const AppStateProvider = ({ children }) => {
 };
 
 AppStateProvider.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
