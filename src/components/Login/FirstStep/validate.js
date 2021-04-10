@@ -1,7 +1,7 @@
 export const validate = (values) => {
   const errors = {};
 
-  if (values.password.length < 9) {
+  if (values.password.length < 8) {
     errors.password = 'SHORT_PASS';
   }
 

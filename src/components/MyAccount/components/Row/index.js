@@ -10,7 +10,9 @@ export const Row = ({
     <TableCell>{`${rowData.firstName} ${rowData.lastName}`}</TableCell>
     <TableCell>{rowData.address.street}</TableCell>
     <TableCell>{rowData.address.entrance}</TableCell>
+    <TableCell>{rowData.address.floor}</TableCell>
     <TableCell>{rowData.address.room}</TableCell>
+    <TableCell>{rowData.peopleLive}</TableCell>
     <TableCell>
       {rowData.status.isPaid
         ? i18n('STATUS_PAID')
@@ -27,7 +29,9 @@ Row.propTypes = {
       street: PropTypes.string.isRequired,
       entrance: PropTypes.string.isRequired,
       room: PropTypes.string.isRequired,
+      floor: PropTypes.string.isRequired,
     }).isRequired,
+    peopleLive: PropTypes.string.isRequired,
     status: PropTypes.shape({
       isPaid: PropTypes.bool.isRequired,
     }).isRequired,

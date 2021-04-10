@@ -28,7 +28,18 @@ export const MyAccount = () => {
       .then((data) => {
         if (isUnmounted) return;
 
-        setUserData(data);
+        setUserData({
+          firstName: user.firstName,
+          lastName: user.lastName,
+          address: {
+            street: data.building.street,
+            entrance: data.entrance.name,
+            room: data.apartment.name,
+            floor: data.apartment.floor,
+          },
+          peopleLive: data.apartment.peopleLive,
+          status: user.status.isPaid,
+        });
       })
       .catch((requestError) => {
         if (isUnmounted) return;

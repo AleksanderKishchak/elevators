@@ -1,3 +1,5 @@
+import { useLocation, useHistory } from 'react-router-dom';
+
 import { makeStyles/* , useTheme */ } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -23,16 +25,29 @@ const useStyles = makeStyles((theme) => ({
 
 export const MenuAppBar = () => {
   const classes = useStyles();
+  const history = useHistory();
+  const location = useLocation();
 
   const {
     user,
     // theme,
     setUser,
+    setAccessAllowed,
     // setTheme,
   } = useAppState();
 
+  const shouldShowGoToMyAccBtn = (
+    location.pathname !== '/login'
+      && location.pathname !== '/my-account'
+  );
+
   const logOut = () => {
     setUser(null);
+    setAccessAllowed(false);
+  };
+
+  const goToMyAcc = () => {
+    history.push('/my-account');
   };
 
   // const toggleTheme = () => {
@@ -59,6 +74,11 @@ export const MenuAppBar = () => {
             }
           </IconButton>
         </Tooltip> */}
+        {shouldShowGoToMyAccBtn && (
+          <Button color="inherit" variant="outlined" onClick={goToMyAcc}>
+            {i18n('GO_TO_MY_ACC')}
+          </Button>
+        )}
         {user && (
           <Button color="inherit" onClick={logOut}>
             {i18n('LOG_OUT')}

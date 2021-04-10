@@ -6,9 +6,9 @@ import isNil from 'lodash/isNil';
 import { useAppState } from '../../hooks/useAppState';
 
 export const ProtectedRoute = ({ children, forAdminOnly, ...props }) => {
-  const { user } = useAppState();
+  const { user, accessAllowed } = useAppState();
 
-  if (isNil(user)) {
+  if (isNil(user) || !accessAllowed) {
     return <Redirect to="/login" />;
   }
 

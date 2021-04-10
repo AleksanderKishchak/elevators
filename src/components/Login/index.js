@@ -10,16 +10,16 @@ import { SecondStep } from './SecondStep';
 export const LogInForm = () => {
   const [step, setStep] = useState(AUTH_STEPS.FIRST);
   const history = useHistory();
-  const { setUser } = useAppState();
+  const { setUser, setAccessAllowed, user } = useAppState();
 
-  const onSuccessFirstStep = () => {
+  const onSuccessFirstStep = (userData) => {
     setStep(AUTH_STEPS.SECOND);
+    setUser(userData);
   };
 
-  const onSuccessSecondStep = (userData) => {
-    setUser(userData);
-
-    const newLocation = userData.isAdmin
+  const onSuccessSecondStep = () => {
+    setAccessAllowed(true);
+    const newLocation = user.isAdmin
       ? '/buildings'
       : '/my-account';
 

@@ -11,7 +11,6 @@ import Paper from '@material-ui/core/Paper';
 
 import { Row } from '../Row';
 import { i18n } from '../../../../appConfig';
-import { UserType } from '../../../../commonPropTypes/user';
 
 const useStyles = makeStyles({
   table: {
@@ -30,7 +29,9 @@ export const MyDataTable = ({ users }) => {
             <TableCell>{i18n('ROW_NAME')}</TableCell>
             <TableCell>{i18n('ROW_ADDRESS_STREET')}</TableCell>
             <TableCell>{i18n('ROW_ADDRESS_ENTRANCE')}</TableCell>
+            <TableCell>{i18n('ROW_ADDRESS_FLOOR')}</TableCell>
             <TableCell>{i18n('ROW_ADDRESS_FLAT')}</TableCell>
+            <TableCell>{i18n('ROW_ADDRESS_PEOPLE_LIVE')}</TableCell>
             <TableCell>{i18n('ROW_STATUS_IS_PAID')}</TableCell>
           </TableRow>
         </TableHead>
@@ -45,5 +46,18 @@ export const MyDataTable = ({ users }) => {
 };
 
 MyDataTable.propTypes = {
-  users: PropTypes.arrayOf(UserType.isRequired).isRequired,
+  users: PropTypes.arrayOf(PropTypes.shape({
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    address: PropTypes.shape({
+      street: PropTypes.string.isRequired,
+      entrance: PropTypes.string.isRequired,
+      room: PropTypes.string.isRequired,
+      floor: PropTypes.string.isRequired,
+    }).isRequired,
+    peopleLive: PropTypes.string.isRequired,
+    status: PropTypes.shape({
+      isPaid: PropTypes.bool.isRequired,
+    }).isRequired,
+  }).isRequired).isRequired,
 };

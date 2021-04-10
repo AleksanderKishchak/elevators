@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -12,7 +13,7 @@ export const useStyles = makeStyles(() => ({
 
 export const Footer = () => {
   const classes = useStyles();
-
+  return null;
   return (
     <div className="footer-container">
       <Box mt={8} className={classes.footer}>

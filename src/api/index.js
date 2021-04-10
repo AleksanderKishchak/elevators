@@ -1,4 +1,3 @@
-import user from '../mocks/user.json';
 import { goTo } from '../utils/goTo';
 
 const baseUrl = 'http://localhost:3004';
@@ -36,24 +35,36 @@ const baseFetch = (endpoint, method = 'GET', body = null) => {
     });
 };
 
-const delayMs = 1000;
+const delayMs = 2000;
 
 // eslint-disable-next-line no-unused-vars
-export const postLogin = (login, pass) => delay(delayMs);
+export const postLogin = (login, pass) => delay(0).then(() => {
+  const userId = login === 'admin@gmail.com' ? 1 : 0;
 
-// eslint-disable-next-line no-unused-vars
-export const postAuthCode = (code) => delay(delayMs).then(() => Promise.resolve(user));
-
-// eslint-disable-next-line no-unused-vars
-export const getUserData = (userId) => delay(delayMs).then(() => {
-  if (!userId) {
-    return Promise.resolve(user);
-  }
-
-  return Promise.reject(new Error('test error'));
+  return (
+    baseFetch(`users/${userId}`)
+  );
 });
 
 // eslint-disable-next-line no-unused-vars
-export const getBuildings = (adminId) => delay(2000).then(() => baseFetch('buildings'));
+export const postAuthCode = (code) => delay(delayMs).then(() => Promise.resolve());
 
-export const getEntrances = (buildingId) => delay(2000).then(() => baseFetch(`buildings/${buildingId}/entrances`));
+// eslint-disable-next-line no-unused-vars
+export const getUserData = (userId) => delay(delayMs).then(() => baseFetch(`users/${userId}`).then(async (user) => {
+  const apartmentData = await baseFetch(`apartments/${user.apartmentId}`);
+  const entranceData = await baseFetch(`entrances/${apartmentData.entranceId}`);
+  const buildingData = await baseFetch(`buildings/${entranceData.buildingId}`);
+
+  return {
+    apartment: apartmentData,
+    entrance: entranceData,
+    building: buildingData,
+  };
+}));
+
+// eslint-disable-next-line no-unused-vars
+export const getBuildings = (adminId) => delay(delayMs).then(() => baseFetch('buildings'));
+
+export const getEntrances = (buildingId) => delay(delayMs).then(() => (
+  baseFetch(`buildings/${buildingId}/entrances`)
+));

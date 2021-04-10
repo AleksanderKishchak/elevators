@@ -8,9 +8,9 @@ export const useSecondStep = (onSuccess) => {
 
   const onSubmit = (values) => {
     setLoading(true);
-    postAuthCode(values.code).then((user) => {
+    postAuthCode(values.code).then(() => {
       setLoading(false);
-      onSuccess(user);
+      onSuccess();
     });
   };
 

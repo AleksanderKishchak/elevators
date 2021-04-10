@@ -32,15 +32,11 @@
       "name": "entrance №3",
       "buildingId": 1
     },
-
-
     {
       "id": 4,
       "name": "entrance №1",
       "buildingId": 0
     },
-
-
     {
       "id": 5,
       "name": "entrance №1",
@@ -51,14 +47,12 @@
       "name": "entrance №2",
       "buildingId": 2
     }
-
-
   ],
   "apartments": [
     {
       "id": 0,
       "floor": 1,
-      "apartmentNumber": "1",
+      "name": "1",
       "peopleLive": 3,
       "userId": 0,
       "entranceId": 0
@@ -66,49 +60,39 @@
     {
       "id": 1,
       "floor": 1,
-      "apartmentNumber": "2",
+      "name": "2",
       "peopleLive": 2,
       "userId": 1,
       "entranceId": 0
     },
-
     {
       "id": 2,
       "floor": 1,
-      "apartmentNumber": "3",
+      "name": "3",
       "peopleLive": 3,
       "userId": 2,
       "entranceId": 1
     },
-
     {
       "id": 3,
       "floor": 1,
-      "apartmentNumber": "4",
+      "name": "4",
       "peopleLive": 1,
       "userId": 3,
       "entranceId": 2
     },
-
-
-
-
     {
       "id": 4,
       "floor": 1,
-      "apartmentNumber": "1",
+      "name": "1",
       "peopleLive": 3,
       "userId": 4,
       "entranceId": 4
     },
-
-
-
-
     {
       "id": 5,
       "floor": 1,
-      "apartmentNumber": "1",
+      "name": "1",
       "peopleLive": 3,
       "userId": 5,
       "entranceId": 5
@@ -116,7 +100,7 @@
     {
       "id": 6,
       "floor": 1,
-      "apartmentNumber": "2",
+      "name": "2",
       "peopleLive": 3,
       "userId": 6,
       "entranceId": 5
@@ -124,14 +108,15 @@
     {
       "id": 7,
       "floor": 1,
-      "apartmentNumber": "3",
+      "name": "3",
       "peopleLive": 3,
       "userId": 7,
       "entranceId": 6
-    },{
+    },
+    {
       "id": 8,
       "floor": 1,
-      "apartmentNumber": "4",
+      "name": "4",
       "peopleLive": 3,
       "userId": 8,
       "entranceId": 6
@@ -150,7 +135,12 @@
     },
     {
       "id": 1,
-      "isAdmin": false,
+      "isAdmin": true,
+      "buildingId": [
+        0,
+        1,
+        2
+      ],
       "firstName": "Ivan 1",
       "lastName": "Ivanov 1",
       "apartmentId": 1,

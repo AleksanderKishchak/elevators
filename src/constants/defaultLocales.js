@@ -21,6 +21,7 @@ const secondStepLogin = {
 const generalInfo = {
   APP_NAME: 'Elevators',
   SWITCH_THEME: 'Toggle light/dark theme',
+  GO_TO_MY_ACC: 'My Account',
 };
 
 const myAccTable = {
@@ -28,7 +29,9 @@ const myAccTable = {
   ROW_ADDRESS_STREET: 'Street',
   ROW_ADDRESS_ENTRANCE: 'Entrance №',
   ROW_ADDRESS_FLAT: 'Flat №',
+  ROW_ADDRESS_FLOOR: 'Floor',
   ROW_STATUS_IS_PAID: 'Status',
+  ROW_ADDRESS_PEOPLE_LIVE: 'Persons registered',
   STATUS_PAID: 'Paid',
   STATUS_UNPAID: 'Not Paid',
 };
@@ -37,6 +40,18 @@ const buildingsTable = {
   BUILDINGS_LIST_NAME: 'Buildings',
   BUILDINGS_STREET_TITLE: 'Street',
   BUILDINGS_POST_CODE_TITLE: 'Post code',
+  BUILDINGS_GO_TO_ENTRANCES: 'See entrances',
+};
+
+const entrancesTable = {
+  ENTRANCE_TABLE_NAME: 'Entrances and apartments list',
+  ENTRANCE_TABLE_ENTRANCE_COLUMN: 'Entrance number',
+  ENTRANCE_TABLE_APARTMENTS: 'Apartments in this entrance',
+
+  APARTMENTS_TABLE_FLOOR: 'Floor',
+  APARTMENTS_TABLE_NUMBER: 'Apartment number',
+  APARTMENTS_TABLE_PEOPLE_LIVE: 'Number of People',
+  APARTMENTS_TABLE_STATUS: 'Payment status',
 };
 
 export default {
@@ -45,4 +60,5 @@ export default {
   ...generalInfo,
   ...myAccTable,
   ...buildingsTable,
+  ...entrancesTable,
 };

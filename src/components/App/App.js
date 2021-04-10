@@ -9,7 +9,8 @@ import { LogInForm } from '../Login';
 import { Footer } from '../Footer';
 import { MenuAppBar } from '../Header';
 import { MyAccount } from '../MyAccount';
-import { AdminPage } from '../AdminPage';
+import { BuildingList } from '../BuildingList';
+import { EntranceList } from '../EntranceList';
 
 import './App.css';
 
@@ -28,8 +29,12 @@ function App() {
         </div>
       </ProtectedRoute>
 
-      <ProtectedRoute forAdminOnly path="/buildings">
-        <AdminPage />
+      <ProtectedRoute exact forAdminOnly path="/buildings">
+        <BuildingList />
+      </ProtectedRoute>
+
+      <ProtectedRoute exact forAdminOnly path="/buildings/:buildingId">
+        <EntranceList />
       </ProtectedRoute>
 
       <ProtectedRoute path="/my-account">

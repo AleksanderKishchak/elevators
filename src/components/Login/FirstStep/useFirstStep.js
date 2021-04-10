@@ -9,9 +9,9 @@ export const useFirstStep = (onSuccess) => {
 
   const onSubmit = ({ email, password }) => {
     setLoading(true);
-    postLogin(email, password).then(() => {
+    postLogin(email, password).then((user) => {
       setLoading(false);
-      onSuccess();
+      onSuccess(user);
     });
   };
 
