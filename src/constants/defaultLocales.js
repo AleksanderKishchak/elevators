@@ -15,13 +15,16 @@ const secondStepLogin = {
   SECOND_STEP_LABEL: 'Confirmation code',
   SEND_CODE: 'Send confirmation code',
   REQUEST_ERROR: 'Oops, something went wrong. Please try again.',
-  RELOAD_PAGE: 'Reload Page',
+  RELOAD_PAGE: 'Reload',
 };
 
 const generalInfo = {
   APP_NAME: 'Elevators',
   SWITCH_THEME: 'Toggle light/dark theme',
   GO_TO_MY_ACC: 'My Account',
+  GO_TO_MY_BUILDINGS: 'My Buildings',
+  NOT_FOUND_PAGE_TITLE: 'Page not found :(',
+  NOT_FOUND_PAGE_SUBTITLE: 'Maybe the page you are looking for has been removed, or you typed in the wrong URL',
 };
 
 const myAccTable = {
@@ -52,6 +55,8 @@ const entrancesTable = {
   APARTMENTS_TABLE_NUMBER: 'Apartment number',
   APARTMENTS_TABLE_PEOPLE_LIVE: 'Number of People',
   APARTMENTS_TABLE_STATUS: 'Payment status',
+  EMPTY_APARTMENTS_LIST: 'There is no apartments in this entrance',
+  EMPTY_ENTRANCES_LIST: 'There is no entrances in this building',
 };
 
 export default {

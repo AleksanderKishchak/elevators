@@ -1,17 +1,18 @@
-import { useLocation, useHistory } from 'react-router-dom';
-
 import { makeStyles/* , useTheme */ } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import { AccountCircle } from '@material-ui/icons';
+import { Menu, MenuItem } from '@material-ui/core';
 // import IconButton from '@material-ui/core/IconButton';
 // import Brightness4Icon from '@material-ui/icons/Brightness4';
 // import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 // import Tooltip from '@material-ui/core/Tooltip';
 
-import { useAppState } from '../../hooks/useAppState';
 import { i18n } from '../../appConfig';
+import { useHeader } from './useHeader';
+import { useIsLoggedIn } from '../../hooks/config.hooks';
 // import { themeKeys } from '../../themes';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,38 +24,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const MenuAppBar = () => {
+export const Header = () => {
   const classes = useStyles();
-  const history = useHistory();
-  const location = useLocation();
-
+  const isLoggedIn = useIsLoggedIn();
   const {
-    user,
-    // theme,
-    setUser,
-    setAccessAllowed,
-    // setTheme,
-  } = useAppState();
-
-  const shouldShowGoToMyAccBtn = (
-    location.pathname !== '/login'
-      && location.pathname !== '/my-account'
-  );
-
-  const logOut = () => {
-    setUser(null);
-    setAccessAllowed(false);
-  };
-
-  const goToMyAcc = () => {
-    history.push('/my-account');
-  };
-
-  // const toggleTheme = () => {
-  //   const newTheme = theme === themeKeys.light ? themeKeys.dark : themeKeys.light;
-  //   localStorage.setItem('theme', newTheme);
-  //   setTheme(newTheme);
-  // };
+    shouldShowGoToMyAccBtn,
+    showMyBuildingsBtn,
+    goToMyAcc,
+    goToMyBuildings,
+    handleMenu,
+    handleClose,
+    anchorEl,
+    open,
+    logOut,
+  } = useHeader();
 
   return (
     <AppBar position="static" className={classes.appBar}>
@@ -74,15 +57,49 @@ export const MenuAppBar = () => {
             }
           </IconButton>
         </Tooltip> */}
-        {shouldShowGoToMyAccBtn && (
-          <Button color="inherit" variant="outlined" onClick={goToMyAcc}>
-            {i18n('GO_TO_MY_ACC')}
-          </Button>
-        )}
-        {user && (
-          <Button color="inherit" onClick={logOut}>
-            {i18n('LOG_OUT')}
-          </Button>
+        {isLoggedIn && (
+          <>
+            <IconButton
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              {shouldShowGoToMyAccBtn && (
+                <MenuItem onClick={goToMyAcc}>
+                  {i18n('GO_TO_MY_ACC')}
+                </MenuItem>
+              )}
+              {showMyBuildingsBtn && (
+                <MenuItem onClick={goToMyBuildings}>
+                  {i18n('GO_TO_MY_BUILDINGS')}
+                </MenuItem>
+              )}
+              {isLoggedIn && (
+                <MenuItem onClick={logOut}>
+                  {i18n('LOG_OUT')}
+                </MenuItem>
+              )}
+            </Menu>
+          </>
         )}
       </Toolbar>
     </AppBar>

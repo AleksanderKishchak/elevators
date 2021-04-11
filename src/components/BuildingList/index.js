@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import map from 'lodash/map';
 
 import Paper from '@material-ui/core/Paper';
@@ -17,6 +15,9 @@ import { i18n } from '../../appConfig';
 import { useAppState } from '../../hooks/useAppState';
 import { getBuildings } from '../../api';
 import { CenteredContainer } from '../CenteredContainer';
+import { useRequestOnMount } from '../../hooks/useRequestOnMount';
+import { ErrorMessage } from '../ErrorMessage';
+import { NavPanel } from '../NavPanel';
 
 const useStyles = makeStyles({
   firstColumn: {
@@ -27,26 +28,7 @@ const useStyles = makeStyles({
 export const BuildingList = () => {
   const classes = useStyles();
   const { user } = useAppState();
-  const [buildings, setBuildings] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    let unmounted = false;
-
-    getBuildings(user.id)
-      .then((response) => {
-        if (unmounted) return;
-
-        setBuildings(response || null);
-      })
-      .catch((error) => {
-        if (unmounted) return;
-
-        setError(error);
-      });
-
-    return () => { unmounted = true; };
-  }, []);
+  const [buildings, error, forceUpdate] = useRequestOnMount(() => getBuildings(user.id));
 
   const renderList = () => (
     <TableContainer component={Paper}>
@@ -75,9 +57,11 @@ export const BuildingList = () => {
 
   return (
     <div className="table-container">
+      <NavPanel />
       <CenteredContainer>
         {(!error && !buildings) && <CircularProgress />}
-        { buildings && renderList()}
+        {(error && !buildings) && <ErrorMessage onClick={forceUpdate} />}
+        {buildings && renderList()}
       </CenteredContainer>
     </div>
   );

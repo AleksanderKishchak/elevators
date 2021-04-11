@@ -66,5 +66,9 @@ export const getUserData = (userId) => delay(delayMs).then(() => baseFetch(`user
 export const getBuildings = (adminId) => delay(delayMs).then(() => baseFetch('buildings'));
 
 export const getEntrances = (buildingId) => delay(delayMs).then(() => (
-  baseFetch(`buildings/${buildingId}/entrances`)
+  baseFetch(`buildings/${buildingId}?_embed=entrances`)
+));
+
+export const getApartments = (entranceId) => delay(delayMs).then(() => (
+  baseFetch(`apartments?entranceId=${entranceId}`)
 ));

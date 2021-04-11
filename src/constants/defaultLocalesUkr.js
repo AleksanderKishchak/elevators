@@ -14,12 +14,16 @@ const secondStepLogin = {
   SECOND_STEP_LABEL: 'Код підтвердження',
   SEND_CODE: 'Надіслати код підтвердження',
   REQUEST_ERROR: 'Щось пішло не так. Будь ласка спробуйте ще раз.',
-  RELOAD_PAGE: 'Перезавантажити сторінку',
+  RELOAD_PAGE: 'Перезавантажити',
 };
 
 const generalInfo = {
   APP_NAME: 'Лифти',
   SWITCH_THEME: 'Переключити світлу/темну тему',
+  GO_TO_MY_ACC: 'Особистий кабінет',
+  GO_TO_MY_BUILDINGS: 'Мої Будівлі',
+  NOT_FOUND_PAGE_TITLE: 'Сторінку не знайдено :(',
+  NOT_FOUND_PAGE_SUBTITLE: 'Можливо, сторінку, яку ви шукаєте, видалено або ви ввели неправильну URL-адресу',
 };
 
 const myAccTable = {
@@ -27,13 +31,31 @@ const myAccTable = {
   ROW_ADDRESS_STREET: 'Вулиця',
   ROW_ADDRESS_ENTRANCE: 'Під\'їзд №',
   ROW_ADDRESS_FLAT: 'Квартира №',
+  ROW_ADDRESS_FLOOR: 'Поверх',
   ROW_STATUS_IS_PAID: 'Статус оплати',
+  ROW_ADDRESS_PEOPLE_LIVE: 'Людей проживає',
   STATUS_PAID: 'Сплачено',
   STATUS_UNPAID: 'Не сплачено',
 };
 
 const buildingsTable = {
   BUILDINGS_LIST_NAME: 'Список будівель',
+  BUILDINGS_STREET_TITLE: 'Вулиця',
+  BUILDINGS_POST_CODE_TITLE: 'Поштовий індекс',
+  BUILDINGS_GO_TO_ENTRANCES: 'Переглянути під\'їзди',
+};
+
+const entrancesTable = {
+  ENTRANCE_TABLE_NAME: 'Список під’їздів та квартир',
+  ENTRANCE_TABLE_ENTRANCE_COLUMN: 'Номер під’їзду',
+  ENTRANCE_TABLE_APARTMENTS: 'Квартири в цьому під’їзді',
+
+  APARTMENTS_TABLE_FLOOR: 'Поверх',
+  APARTMENTS_TABLE_NUMBER: 'Номер квартири',
+  APARTMENTS_TABLE_PEOPLE_LIVE: 'Кількість людей',
+  APARTMENTS_TABLE_STATUS: 'Статус оплати',
+  EMPTY_APARTMENTS_LIST: 'У цьому під’їзді немає квартир',
+  EMPTY_ENTRANCES_LIST: 'У цієї будівлі немає під’їздів',
 };
 
 export default {
@@ -42,4 +64,5 @@ export default {
   ...generalInfo,
   ...myAccTable,
   ...buildingsTable,
+  ...entrancesTable,
 };
