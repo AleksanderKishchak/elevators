@@ -11,7 +11,7 @@ import { LogInForm } from '../Login';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
 import { MyAccount } from '../MyAccount';
-import { BuildingList } from '../BuildingList';
+import { BuildingRoute } from '../BuildingsRoute';
 import { EntranceList } from '../EntranceList';
 import { NotFoundPage } from '../NotFoundPage';
 
@@ -32,7 +32,7 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute exact forAdminOnly path="/buildings">
-          <BuildingList />
+          <BuildingRoute />
         </ProtectedRoute>
 
         <ProtectedRoute exact forAdminOnly path="/buildings/:buildingId">
@@ -42,6 +42,7 @@ function App() {
         <ProtectedRoute path="/my-account">
           <MyAccount />
         </ProtectedRoute>
+
         <Route>
           <NotFoundPage />
         </Route>

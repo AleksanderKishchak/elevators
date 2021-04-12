@@ -1,0 +1,15 @@
+.view-switch {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1560px) {
+  .view-switch-list {
+    display: flex;
+    justify-content: flex-end;
+    position: static;
+    margin: 24px 24px 0;
+  }
+}

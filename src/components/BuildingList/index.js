@@ -1,4 +1,5 @@
 import map from 'lodash/map';
+import PropTypes from 'prop-types';
 
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -12,12 +13,10 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { Row } from './Row';
 import { i18n } from '../../appConfig';
-import { useAppState } from '../../hooks/useAppState';
-import { getBuildings } from '../../api';
 import { CenteredContainer } from '../CenteredContainer';
-import { useRequestOnMount } from '../../hooks/useRequestOnMount';
 import { ErrorMessage } from '../ErrorMessage';
 import { NavPanel } from '../NavPanel';
+import { BuildingPropType } from '../BuildingsMap/Marker';
 
 const useStyles = makeStyles({
   firstColumn: {
@@ -25,10 +24,12 @@ const useStyles = makeStyles({
   },
 });
 
-export const BuildingList = () => {
+export const BuildingList = ({
+  buildings,
+  error,
+  forceUpdate,
+}) => {
   const classes = useStyles();
-  const { user } = useAppState();
-  const [buildings, error, forceUpdate] = useRequestOnMount(() => getBuildings(user.id));
 
   const renderList = () => (
     <TableContainer component={Paper}>
@@ -65,4 +66,15 @@ export const BuildingList = () => {
       </CenteredContainer>
     </div>
   );
+};
+
+BuildingList.propTypes = {
+  buildings: PropTypes.arrayOf(BuildingPropType),
+  error: PropTypes.oneOf([null, PropTypes.object]),
+  forceUpdate: PropTypes.func.isRequired,
+};
+
+BuildingList.defaultProps = {
+  buildings: [],
+  error: null,
 };

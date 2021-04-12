@@ -3,17 +3,20 @@
     {
       "id": 0,
       "street": "Ivanova 1 st",
-      "postCode": "69050"
+      "postCode": "69050",
+      "coords": [47.791037, 35.209671]
     },
     {
       "id": 1,
       "street": "Ivanova 2 st",
-      "postCode": "69000"
+      "postCode": "69000",
+      "coords": [47.7918099, 35.2095006]
     },
     {
       "id": 2,
       "street": "Ivanova 3 st",
-      "postCode": "69000"
+      "postCode": "69000",
+      "coords": [47.7913788, 35.2104009]
     }
   ],
   "entrances": [
