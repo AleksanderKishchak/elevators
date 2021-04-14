@@ -49,3 +49,5 @@ export const LogInForm = () => {
     </>
   );
 };
+
+export default LogInForm;

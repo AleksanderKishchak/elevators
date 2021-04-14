@@ -108,3 +108,5 @@ export const EntranceList = () => {
     </div>
   );
 };
+
+export default EntranceList;

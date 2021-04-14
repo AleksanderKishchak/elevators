@@ -1,6 +1,6 @@
 import { goTo } from '../utils/goTo';
 
-const baseUrl = 'http://localhost:3004';
+const baseUrl = 'http://localhost:3004/api';
 
 const delay = (ms) => new Promise((resolve) => {
   setTimeout(resolve, ms);

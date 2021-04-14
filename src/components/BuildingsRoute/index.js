@@ -71,3 +71,5 @@ export const BuildingRoute = () => {
     </>
   );
 };
+
+export default BuildingRoute;

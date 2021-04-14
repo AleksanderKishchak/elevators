@@ -2,7 +2,6 @@
   "name": "elevators-template",
   "version": "0.2.0",
   "private": true,
-  "homepage": "https://aleksanderkishchak.github.io/elevators/",
   "dependencies": {
     "@babel/core": "7.12.3",
     "@material-ui/core": "^4.11.3",
@@ -31,6 +30,7 @@
     "eslint-plugin-jest": "^24.1.0",
     "eslint-plugin-testing-library": "^3.9.2",
     "eslint-webpack-plugin": "^2.5.2",
+    "express": "^4.17.1",
     "file-loader": "6.1.1",
     "formik": "^2.2.6",
     "fs-extra": "^9.0.1",
@@ -40,6 +40,7 @@
     "jest-circus": "26.6.0",
     "jest-resolve": "26.6.0",
     "jest-watch-typeahead": "0.6.1",
+    "json-server": "^0.16.3",
     "leaflet": "^1.7.1",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "0.11.3",
@@ -75,12 +76,10 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "node server.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
-    "start:server": "json-server --watch json-server/db.json --port 3004",
+    "start:server": "node server.js",
     "start:all": "npm run start & npm run start:server"
   },
   "eslintConfig": {

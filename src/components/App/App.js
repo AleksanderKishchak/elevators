@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -7,15 +8,17 @@ import {
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { ProtectedRoute } from '../ProtectedRoute';
-import { LogInForm } from '../Login';
+import { LazyLoader } from '../LazyLoader';
 import { Footer } from '../Footer';
 import { Header } from '../Header';
-import { MyAccount } from '../MyAccount';
-import { BuildingRoute } from '../BuildingsRoute';
-import { EntranceList } from '../EntranceList';
-import { NotFoundPage } from '../NotFoundPage';
 
 import './App.css';
+
+const LogInForm = lazy(() => import('../Login'));
+const MyAccount = lazy(() => import('../MyAccount'));
+const BuildingRoute = lazy(() => import('../BuildingsRoute'));
+const EntranceList = lazy(() => import('../EntranceList'));
+const NotFoundPage = lazy(() => import('../NotFoundPage'));
 
 function App() {
   return (
@@ -24,7 +27,9 @@ function App() {
       <CssBaseline />
       <Switch>
         <Route path="/login">
-          <LogInForm />
+          <Suspense fallback={<LazyLoader />}>
+            <LogInForm />
+          </Suspense>
         </Route>
 
         <ProtectedRoute exact path="/">
@@ -32,19 +37,27 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute exact forAdminOnly path="/buildings">
-          <BuildingRoute />
+          <Suspense fallback={<LazyLoader />}>
+            <BuildingRoute />
+          </Suspense>
         </ProtectedRoute>
 
         <ProtectedRoute exact forAdminOnly path="/buildings/:buildingId">
-          <EntranceList />
+          <Suspense fallback={<LazyLoader />}>
+            <EntranceList />
+          </Suspense>
         </ProtectedRoute>
 
         <ProtectedRoute path="/my-account">
-          <MyAccount />
+          <Suspense fallback={<LazyLoader />}>
+            <MyAccount />
+          </Suspense>
         </ProtectedRoute>
 
         <Route>
-          <NotFoundPage />
+          <Suspense fallback={<LazyLoader />}>
+            <NotFoundPage />
+          </Suspense>
         </Route>
       </Switch>
       <Footer />
