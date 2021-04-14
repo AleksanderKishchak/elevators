@@ -1,6 +1,6 @@
 {
   "name": "elevators-template",
-  "version": "0.1.0",
+  "version": "0.1.0-custom",
   "private": true,
   "homepage": "https://aleksanderkishchak.github.io/elevators/",
   "dependencies": {
