@@ -85,7 +85,7 @@ export const FirstStep = ({ onSuccess }) => {
           <div className="flex-center">
             <ReCAPTCHA
               onChange={onRecaptchaChange}
-              sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+              sitekey="6LfMfIcaAAAAAMLjS9J0yLsudH5cWfaWY1edFlfa"
               theme={theme.palette.type}
               hl="uk"
             />
