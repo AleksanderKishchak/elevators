@@ -1,13 +1,17 @@
 import { goTo } from '../utils/goTo';
 
-const baseUrl = 'http://localhost:3004/api';
+const baseUrl = process.env.NODE_ENV !== 'production'
+  ? 'http://localhost:3004'
+  : 'https://zp-elevators.herokuapp.com';
+
+const baseApiUrl = `${baseUrl}/api`;
 
 const delay = (ms) => new Promise((resolve) => {
   setTimeout(resolve, ms);
 });
 
 const baseFetch = (endpoint, method = 'GET', body = null) => {
-  const promise = fetch(`${baseUrl}/${endpoint}`, {
+  const promise = fetch(`${baseApiUrl}/${endpoint}`, {
     method,
     body,
     headers: {
