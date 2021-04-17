@@ -43,7 +43,7 @@ export const Row = ({
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
-          {entrance.name}
+          <b>{entrance.name}</b>
         </TableCell>
       </TableRow>
       <TableRow>

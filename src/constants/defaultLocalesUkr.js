@@ -50,12 +50,13 @@ const buildingsTable = {
 const entrancesTable = {
   ENTRANCE_TABLE_NAME: 'Список під’їздів та квартир',
   ENTRANCE_TABLE_ENTRANCE_COLUMN: 'Номер під’їзду',
-  ENTRANCE_TABLE_APARTMENTS: 'Квартири в цьому під’їзді',
+  ENTRANCE_TABLE_APARTMENTS: 'Квартири в цьому під’їзді:',
 
   APARTMENTS_TABLE_FLOOR: 'Поверх',
   APARTMENTS_TABLE_NUMBER: 'Номер квартири',
   APARTMENTS_TABLE_PEOPLE_LIVE: 'Кількість людей',
   APARTMENTS_TABLE_STATUS: 'Статус оплати',
+  APARTMENTS_TABLE_OWNER_NAME: 'Ім\'я Власника',
   EMPTY_APARTMENTS_LIST: 'У цьому під’їзді немає квартир',
   EMPTY_ENTRANCES_LIST: 'У цієї будівлі немає під’їздів',
 };

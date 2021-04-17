@@ -60,9 +60,10 @@ export const ApartmentTable = ({
     <Table size="small" aria-label="purchases">
       <TableHead>
         <TableRow>
-          <TableCell align="center"><T9n t="APARTMENTS_TABLE_FLOOR" /></TableCell>
           <TableCell align="center"><T9n t="APARTMENTS_TABLE_NUMBER" /></TableCell>
+          <TableCell align="center"><T9n t="APARTMENTS_TABLE_FLOOR" /></TableCell>
           <TableCell align="center"><T9n t="APARTMENTS_TABLE_PEOPLE_LIVE" /></TableCell>
+          <TableCell align="center"><T9n t="APARTMENTS_TABLE_OWNER_NAME" /></TableCell>
           <TableCell align="center"><T9n t="APARTMENTS_TABLE_STATUS" /></TableCell>
         </TableRow>
       </TableHead>

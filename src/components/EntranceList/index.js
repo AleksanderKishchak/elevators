@@ -79,6 +79,8 @@ export const EntranceList = () => {
       <CenteredContainer>
         <TableContainer component={Paper}>
           <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
+            <T9n t="BUILDINGS_STREET_TITLE" />
+            {': '}
             {entrancesData.street}
             {', '}
             {entrancesData.postCode}

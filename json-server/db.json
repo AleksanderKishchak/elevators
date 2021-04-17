@@ -22,32 +22,32 @@
   "entrances": [
     {
       "id": 0,
-      "name": "entrance №1",
+      "name": "№1",
       "buildingId": 1
     },
     {
       "id": 1,
-      "name": "entrance №2",
+      "name": "№2",
       "buildingId": 1
     },
     {
       "id": 3,
-      "name": "entrance №3",
+      "name": "№3",
       "buildingId": 1
     },
     {
       "id": 4,
-      "name": "entrance №1",
+      "name": "№1",
       "buildingId": 0
     },
     {
       "id": 5,
-      "name": "entrance №1",
+      "name": "№1",
       "buildingId": 2
     },
     {
       "id": 6,
-      "name": "entrance №2",
+      "name": "№2",
       "buildingId": 2
     }
   ],
@@ -158,7 +158,7 @@
       "lastName": "Ivanov 2",
       "apartmentId": 2,
       "status": {
-        "isPaid": true
+        "isPaid": false
       }
     },
     {
@@ -178,7 +178,7 @@
       "lastName": "Ivanov 4",
       "apartmentId": 4,
       "status": {
-        "isPaid": true
+        "isPaid": false
       }
     },
     {
@@ -198,7 +198,7 @@
       "lastName": "Ivanov 6",
       "apartmentId": 6,
       "status": {
-        "isPaid": true
+        "isPaid": false
       }
     },
     {
@@ -218,7 +218,7 @@
       "lastName": "Ivanov 8",
       "apartmentId": 8,
       "status": {
-        "isPaid": true
+        "isPaid": false
       }
     }
   ]

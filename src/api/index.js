@@ -73,6 +73,25 @@ export const getEntrances = (buildingId) => delay(delayMs).then(() => (
   baseFetch(`buildings/${buildingId}?_embed=entrances`)
 ));
 
-export const getApartments = (entranceId) => delay(delayMs).then(() => (
-  baseFetch(`apartments?entranceId=${entranceId}`)
-));
+export const getApartments = (entranceId) => delay(delayMs).then(async () => {
+  const apartments = await baseFetch(`apartments?entranceId=${entranceId}`);
+  const userIds = apartments.map((a) => a.userId);
+  const idParams = `id=${userIds.join('&id=')}`;
+
+  const users = await baseFetch(`users?${idParams}`);
+
+  const usersMap = users?.reduce((acc, user) => {
+    acc[user.id] = user;
+
+    return acc;
+  }, {});
+
+  return apartments?.map((a) => {
+    const user = usersMap[a.userId];
+
+    return {
+      ...a,
+      user,
+    };
+  });
+});

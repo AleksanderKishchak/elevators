@@ -19,7 +19,7 @@ const localStorageViewKey = 'isListView';
 export const BuildingRoute = () => {
   const { user } = useAppState();
   const [buildings, error, forceUpdate] = useRequestOnMount(() => getBuildings(user.id));
-  const [isListView, setIsListView] = useState(!!localStorage.getItem(localStorageViewKey));
+  const [isListView, setIsListView] = useState(localStorage.getItem(localStorageViewKey) === 'true');
 
   const setView = (value) => () => {
     localStorage.setItem(localStorageViewKey, value);
