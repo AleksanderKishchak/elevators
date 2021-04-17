@@ -32,7 +32,7 @@ export const BuildingsMap = ({
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {buildings?.map((building) => (<BuildingMarker building={building} />))}
+        {buildings?.map((building) => (<BuildingMarker building={building} key={building.id} />))}
       </MapContainer>
     </div>
   );

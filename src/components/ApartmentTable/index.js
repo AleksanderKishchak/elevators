@@ -11,10 +11,10 @@ import Table from '@material-ui/core/Table';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import Typography from '@material-ui/core/Typography';
-import { i18n } from '../../appConfig';
 import { Row } from './Row';
 import { CenteredContainer } from '../CenteredContainer';
 import { ErrorMessage } from '../ErrorMessage';
+import { T9n } from '../T9n';
 
 export const ApartmentTable = ({
   entranceId,
@@ -50,7 +50,7 @@ export const ApartmentTable = ({
     return (
       <CenteredContainer>
         <Typography align="center">
-          {i18n('EMPTY_APARTMENTS_LIST')}
+          <T9n t="EMPTY_APARTMENTS_LIST" />
         </Typography>
       </CenteredContainer>
     );
@@ -60,10 +60,10 @@ export const ApartmentTable = ({
     <Table size="small" aria-label="purchases">
       <TableHead>
         <TableRow>
-          <TableCell align="center">{i18n('APARTMENTS_TABLE_FLOOR')}</TableCell>
-          <TableCell align="center">{i18n('APARTMENTS_TABLE_NUMBER')}</TableCell>
-          <TableCell align="center">{i18n('APARTMENTS_TABLE_PEOPLE_LIVE')}</TableCell>
-          <TableCell align="center">{i18n('APARTMENTS_TABLE_STATUS')}</TableCell>
+          <TableCell align="center"><T9n t="APARTMENTS_TABLE_FLOOR" /></TableCell>
+          <TableCell align="center"><T9n t="APARTMENTS_TABLE_NUMBER" /></TableCell>
+          <TableCell align="center"><T9n t="APARTMENTS_TABLE_PEOPLE_LIVE" /></TableCell>
+          <TableCell align="center"><T9n t="APARTMENTS_TABLE_STATUS" /></TableCell>
         </TableRow>
       </TableHead>
       <TableBody>

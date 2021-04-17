@@ -12,11 +12,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { Row } from './Row';
-import { i18n } from '../../appConfig';
 import { CenteredContainer } from '../CenteredContainer';
 import { ErrorMessage } from '../ErrorMessage';
-import { NavPanel } from '../NavPanel';
 import { BuildingPropType } from '../BuildingsMap/Marker';
+import { T9n } from '../T9n';
 
 const useStyles = makeStyles({
   firstColumn: {
@@ -36,9 +35,15 @@ export const BuildingList = ({
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
-            <TableCell className={classes.firstColumn}>{i18n('BUILDINGS_LIST_NAME')}</TableCell>
-            <TableCell align="left">{i18n('BUILDINGS_STREET_TITLE')}</TableCell>
-            <TableCell>{i18n('BUILDINGS_POST_CODE_TITLE')}</TableCell>
+            <TableCell className={classes.firstColumn}>
+              <T9n t="BUILDINGS_LIST_NAME" />
+            </TableCell>
+            <TableCell align="left">
+              <T9n t="BUILDINGS_STREET_TITLE" />
+            </TableCell>
+            <TableCell>
+              <T9n t="BUILDINGS_POST_CODE_TITLE" />
+            </TableCell>
             <TableCell align="right" />
           </TableRow>
         </TableHead>
@@ -58,7 +63,6 @@ export const BuildingList = ({
 
   return (
     <div className="table-container">
-      <NavPanel />
       <CenteredContainer>
         {(!error && !buildings) && <CircularProgress />}
         {(error && !buildings) && <ErrorMessage onClick={forceUpdate} />}

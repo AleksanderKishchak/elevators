@@ -9,9 +9,9 @@ import Container from '@material-ui/core/Container';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Backdrop from '@material-ui/core/Backdrop';
-import { i18n } from '../../../appConfig';
 import { useStyles } from '../useStyles';
 import { useSecondStep } from './useSecondStep';
+import { T9n } from '../../T9n';
 
 export const SecondStep = ({ onSuccess }) => {
   const classes = useStyles();
@@ -27,7 +27,7 @@ export const SecondStep = ({ onSuccess }) => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {i18n('SECOND_STEP_LABEL')}
+          <T9n t="SECOND_STEP_LABEL" />
         </Typography>
         <form onSubmit={formik.handleSubmit} className={classes.form}>
           <TextField
@@ -35,7 +35,7 @@ export const SecondStep = ({ onSuccess }) => {
             margin="normal"
             required
             fullWidth
-            label={i18n('SECOND_STEP_LABEL')}
+            label={<T9n t="SECOND_STEP_LABEL" />}
             id="code"
             name="code"
             type="code"
@@ -44,7 +44,7 @@ export const SecondStep = ({ onSuccess }) => {
             onBlur={formik.handleBlur}
             value={formik.values.code}
             error={!!formik.errors.code && formik.touched.code}
-            helperText={i18n(formik.errors.code)}
+            helperText={<T9n t={formik.errors.code} />}
           />
           <Button
             type="submit"
@@ -53,7 +53,7 @@ export const SecondStep = ({ onSuccess }) => {
             color="primary"
             className={classes.submit}
           >
-            {i18n('SEND_CODE')}
+            <T9n t="SEND_CODE" />
           </Button>
         </form>
       </div>

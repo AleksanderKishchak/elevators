@@ -14,12 +14,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { getEntrances } from '../../api';
 import { CenteredContainer } from '../CenteredContainer';
-import { NavPanel } from '../NavPanel';
 import { Row } from './Row';
-import { i18n } from '../../appConfig';
 import { useRequestOnMount } from '../../hooks/useRequestOnMount';
 import { ErrorMessage } from '../ErrorMessage';
 import { useApartmentsData } from '../../hooks/useApartmentsData';
+import { T9n } from '../T9n';
 
 const useStyles = makeStyles({
   title: {
@@ -69,7 +68,7 @@ export const EntranceList = () => {
     return (
       <CenteredContainer>
         <Typography align="center">
-          {i18n('EMPTY_ENTRANCES_LIST')}
+          <T9n t="EMPTY_ENTRANCES_LIST" />
         </Typography>
       </CenteredContainer>
     );
@@ -77,7 +76,6 @@ export const EntranceList = () => {
 
   return (
     <div className="table-container">
-      <NavPanel />
       <CenteredContainer>
         <TableContainer component={Paper}>
           <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
@@ -88,8 +86,12 @@ export const EntranceList = () => {
           <Table aria-label="collapsible table">
             <TableHead>
               <TableRow>
-                <TableCell className={classes.firstCell}>{i18n('ENTRANCE_TABLE_NAME')}</TableCell>
-                <TableCell>{i18n('ENTRANCE_TABLE_ENTRANCE_COLUMN')}</TableCell>
+                <TableCell className={classes.firstCell}>
+                  <T9n t="ENTRANCE_TABLE_NAME" />
+                </TableCell>
+                <TableCell>
+                  <T9n t="ENTRANCE_TABLE_ENTRANCE_COLUMN" />
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

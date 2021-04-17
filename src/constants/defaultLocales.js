@@ -25,6 +25,8 @@ const generalInfo = {
   GO_TO_MY_BUILDINGS: 'My Buildings',
   NOT_FOUND_PAGE_TITLE: 'Page not found :(',
   NOT_FOUND_PAGE_SUBTITLE: 'Maybe the page you are looking for has been removed, or you typed in the wrong URL',
+  LANGS_ENG: 'ENG',
+  LANGS_UKR: 'UKR',
 };
 
 const myAccTable = {

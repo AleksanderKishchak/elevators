@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import { AppStateProvider } from './provider/AppStateProvider';
+import { LangProvider } from './provider/LangProvider';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppStateProvider>
-      <App />
-    </AppStateProvider>
+    <LangProvider>
+      <AppStateProvider>
+        <App />
+      </AppStateProvider>
+    </LangProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

@@ -1,5 +1,5 @@
-export const createLocale = (locales) => {
-  let localesStore = locales;
+export const createLocale = (locales, defaultLocales) => {
+  let localesStore = { ...defaultLocales, ...locales };
 
   return {
     get(constantName = '') {

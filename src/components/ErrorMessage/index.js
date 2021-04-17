@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
-import { i18n } from '../../appConfig';
 import { useStyles } from './useStyles';
+import { T9n } from '../T9n';
 
 export const ErrorMessage = ({ onClick }) => {
   const classes = useStyles();
@@ -13,7 +13,7 @@ export const ErrorMessage = ({ onClick }) => {
     <>
       <div className={classes.error}>
         <Typography align="center" color="secondary">
-          {i18n('REQUEST_ERROR')}
+          <T9n t="REQUEST_ERROR" />
         </Typography>
       </div>
       <Button
@@ -21,7 +21,7 @@ export const ErrorMessage = ({ onClick }) => {
         color="secondary"
         onClick={onClick}
       >
-        {i18n('RELOAD_PAGE')}
+        <T9n t="RELOAD_PAGE" />
       </Button>
     </>
   );

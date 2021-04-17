@@ -12,8 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 
-import { i18n } from '../../../appConfig';
 import { ApartmentTable } from '../../ApartmentTable';
+import { T9n } from '../../T9n';
 
 const useRowStyles = makeStyles({
   root: {
@@ -51,7 +51,7 @@ export const Row = ({
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
               <Typography variant="h6" gutterBottom component="div">
-                {i18n('ENTRANCE_TABLE_APARTMENTS')}
+                <T9n t="ENTRANCE_TABLE_APARTMENTS" />
               </Typography>
               <ApartmentTable
                 entranceId={entrance.id}

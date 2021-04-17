@@ -7,7 +7,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Button from '@material-ui/core/Button';
 import HomeIcon from '@material-ui/icons/HomeRounded';
 
-import { i18n } from '../../../appConfig';
+import { T9n } from '../../T9n';
 
 const useRowStyles = makeStyles({
 
@@ -34,7 +34,7 @@ export const Row = ({
       <TableCell>{building.postCode}</TableCell>
       <TableCell align="right">
         <Button variant="contained" onClick={goToEntrances}>
-          {i18n('BUILDINGS_GO_TO_ENTRANCES')}
+          <T9n t="BUILDINGS_GO_TO_ENTRANCES" />
         </Button>
       </TableCell>
     </TableRow>

@@ -10,9 +10,11 @@ import { Menu, MenuItem } from '@material-ui/core';
 // import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 // import Tooltip from '@material-ui/core/Tooltip';
 
-import { i18n } from '../../appConfig';
+import { ReactComponent as ElevatorIcon } from '../../images/elevator.svg';
+import { LangSelect } from '../LangSelect';
 import { useHeader } from './useHeader';
 import { useIsLoggedIn } from '../../hooks/config.hooks';
+import { T9n } from '../T9n';
 // import { themeKeys } from '../../themes';
 
 const useStyles = makeStyles((theme) => ({
@@ -42,8 +44,10 @@ export const Header = () => {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Toolbar>
+        <ElevatorIcon id="elevator-icon" />
+
         <Typography variant="h6" className={classes.title}>
-          {i18n('APP_NAME')}
+          <T9n t="APP_NAME" />
         </Typography>
         {/* <Tooltip title={i18n('SWITCH_THEME')} arrow>
           <IconButton
@@ -57,6 +61,7 @@ export const Header = () => {
             }
           </IconButton>
         </Tooltip> */}
+        <LangSelect />
         {isLoggedIn && (
           <>
             <IconButton
@@ -85,17 +90,17 @@ export const Header = () => {
             >
               {shouldShowGoToMyAccBtn && (
                 <MenuItem onClick={goToMyAcc}>
-                  {i18n('GO_TO_MY_ACC')}
+                  <T9n t="GO_TO_MY_ACC" />
                 </MenuItem>
               )}
               {showMyBuildingsBtn && (
                 <MenuItem onClick={goToMyBuildings}>
-                  {i18n('GO_TO_MY_BUILDINGS')}
+                  <T9n t="GO_TO_MY_BUILDINGS" />
                 </MenuItem>
               )}
               {isLoggedIn && (
                 <MenuItem onClick={logOut}>
-                  {i18n('LOG_OUT')}
+                  <T9n t="LOG_OUT" />
                 </MenuItem>
               )}
             </Menu>

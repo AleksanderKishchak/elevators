@@ -1,8 +1,14 @@
 .table-container {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .flex-center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+#elevator-icon {
+  width: 36px;
+  fill: white;
+  margin-right: 10px;
 }

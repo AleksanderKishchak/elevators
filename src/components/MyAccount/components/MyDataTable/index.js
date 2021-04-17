@@ -10,7 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 import { Row } from '../Row';
-import { i18n } from '../../../../appConfig';
+import { T9n } from '../../../T9n';
 
 const useStyles = makeStyles({
   table: {
@@ -26,13 +26,13 @@ export const MyDataTable = ({ users }) => {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>{i18n('ROW_NAME')}</TableCell>
-            <TableCell>{i18n('ROW_ADDRESS_STREET')}</TableCell>
-            <TableCell>{i18n('ROW_ADDRESS_ENTRANCE')}</TableCell>
-            <TableCell>{i18n('ROW_ADDRESS_FLOOR')}</TableCell>
-            <TableCell>{i18n('ROW_ADDRESS_FLAT')}</TableCell>
-            <TableCell>{i18n('ROW_ADDRESS_PEOPLE_LIVE')}</TableCell>
-            <TableCell>{i18n('ROW_STATUS_IS_PAID')}</TableCell>
+            <TableCell><T9n t="ROW_NAME" /></TableCell>
+            <TableCell><T9n t="ROW_ADDRESS_STREET" /></TableCell>
+            <TableCell><T9n t="ROW_ADDRESS_ENTRANCE" /></TableCell>
+            <TableCell><T9n t="ROW_ADDRESS_FLOOR" /></TableCell>
+            <TableCell><T9n t="ROW_ADDRESS_FLAT" /></TableCell>
+            <TableCell><T9n t="ROW_ADDRESS_PEOPLE_LIVE" /></TableCell>
+            <TableCell><T9n t="ROW_STATUS_IS_PAID" /></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -53,9 +53,9 @@ MyDataTable.propTypes = {
       street: PropTypes.string.isRequired,
       entrance: PropTypes.string.isRequired,
       room: PropTypes.string.isRequired,
-      floor: PropTypes.string.isRequired,
+      floor: PropTypes.number.isRequired,
     }).isRequired,
-    peopleLive: PropTypes.string.isRequired,
+    peopleLive: PropTypes.number.isRequired,
     status: PropTypes.shape({
       isPaid: PropTypes.bool.isRequired,
     }).isRequired,

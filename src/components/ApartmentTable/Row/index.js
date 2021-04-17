@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 
-import { i18n } from '../../../appConfig';
+import { T9n } from '../../T9n';
 
 export const Row = ({
   apartment: {
@@ -19,8 +19,8 @@ export const Row = ({
     <TableCell align="center">{peopleLive}</TableCell>
     <TableCell align="center">
       {user?.status?.isPaid
-        ? i18n('STATUS_PAID')
-        : i18n('STATUS_UNPAID')}
+        ? <T9n t="STATUS_PAID" />
+        : <T9n t="STATUS_UNPAID" />}
     </TableCell>
   </TableRow>
 );

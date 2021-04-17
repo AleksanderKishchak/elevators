@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 import { useHistory } from 'react-router-dom';
-import { i18n } from '../../appConfig';
+import { T9n } from '../T9n';
 
 const useStyles = makeStyles({
   root: {
@@ -43,18 +43,18 @@ export const NotFoundPage = () => {
       <Container>
         <Paper elevation={3} className={classes.root}>
           <Typography variant="h3" className={classes.sidePadding}>
-            {i18n('NOT_FOUND_PAGE_TITLE')}
+            <T9n t="NOT_FOUND_PAGE_TITLE" />
           </Typography>
           <Typography className={classes.sidePadding}>
-            {i18n('NOT_FOUND_PAGE_SUBTITLE')}
+            <T9n t="NOT_FOUND_PAGE_SUBTITLE" />
           </Typography>
           <div className={classes.lineBreak} />
           <div className={classes.padding}>
             <Button onClick={goToMyAcc} color="primary">
-              {i18n('GO_TO_MY_ACC')}
+              <T9n t="GO_TO_MY_ACC" />
             </Button>
             <Button onClick={goToMyBuildings} color="primary">
-              {i18n('GO_TO_MY_BUILDINGS')}
+              <T9n t="GO_TO_MY_BUILDINGS" />
             </Button>
           </div>
         </Paper>

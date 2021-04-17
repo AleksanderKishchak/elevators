@@ -5,7 +5,7 @@ import { Popup, Marker } from 'react-leaflet';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import { i18n } from '../../../appConfig';
+import { T9n } from '../../T9n';
 
 export const BuildingMarker = ({ building }) => {
   const match = useRouteMatch();
@@ -28,7 +28,7 @@ export const BuildingMarker = ({ building }) => {
           {building.postCode}
         </Typography>
         <Button onClick={onClick}>
-          {i18n('BUILDINGS_GO_TO_ENTRANCES')}
+          <T9n t="BUILDINGS_GO_TO_ENTRANCES" />
         </Button>
       </Popup>
     </Marker>

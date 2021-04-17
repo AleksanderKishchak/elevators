@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
-import { i18n } from '../../../../appConfig';
+import { T9n } from '../../../T9n';
 
 export const Row = ({
   rowData,
@@ -15,8 +15,8 @@ export const Row = ({
     <TableCell>{rowData.peopleLive}</TableCell>
     <TableCell>
       {rowData.status.isPaid
-        ? i18n('STATUS_PAID')
-        : i18n('STATUS_UNPAID')}
+        ? <T9n t="STATUS_PAID" />
+        : <T9n t="STATUS_UNPAID" />}
     </TableCell>
   </TableRow>
 );
@@ -29,9 +29,9 @@ Row.propTypes = {
       street: PropTypes.string.isRequired,
       entrance: PropTypes.string.isRequired,
       room: PropTypes.string.isRequired,
-      floor: PropTypes.string.isRequired,
+      floor: PropTypes.number.isRequired,
     }).isRequired,
-    peopleLive: PropTypes.string.isRequired,
+    peopleLive: PropTypes.number.isRequired,
     status: PropTypes.shape({
       isPaid: PropTypes.bool.isRequired,
     }).isRequired,

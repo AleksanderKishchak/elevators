@@ -15,9 +15,10 @@ import Container from '@material-ui/core/Container';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import { useTheme } from '@material-ui/core/styles';
 
-import { i18n } from '../../../appConfig';
 import { useStyles } from '../useStyles';
 import { useFirstStep } from './useFirstStep';
+import { T9n } from '../../T9n';
+import { useLangs } from '../../../hooks/useLangs';
 
 const shouldShowError = (fieldName, formik) => (
   !!formik.errors[fieldName] && formik.touched[fieldName]
@@ -26,6 +27,7 @@ const shouldShowError = (fieldName, formik) => (
 export const FirstStep = ({ onSuccess }) => {
   const classes = useStyles();
   const theme = useTheme();
+  const { lang } = useLangs();
   const {
     formik,
     isLoading,
@@ -42,7 +44,7 @@ export const FirstStep = ({ onSuccess }) => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {i18n('SIGN_IN')}
+          <T9n t="SIGN_IN" />
         </Typography>
         <form onSubmit={formik.handleSubmit} className={classes.form}>
           <TextField
@@ -50,7 +52,7 @@ export const FirstStep = ({ onSuccess }) => {
             margin="normal"
             required
             fullWidth
-            label={i18n('EMAIL_ADDRESS_LABEL')}
+            label={<T9n t="EMAIL_ADDRESS_LABEL" />}
             id="email"
             name="email"
             autoComplete="email"
@@ -60,7 +62,7 @@ export const FirstStep = ({ onSuccess }) => {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             error={shouldShowError('email', formik)}
-            helperText={i18n(formik.errors.email)}
+            helperText={<T9n t={formik.errors.email} />}
           />
           <TextField
             className={classes.marginBottom}
@@ -68,7 +70,7 @@ export const FirstStep = ({ onSuccess }) => {
             margin="normal"
             required
             fullWidth
-            label={i18n('PASSWORD_LABEL')}
+            label={<T9n t="PASSWORD_LABEL" />}
             name="password"
             type="password"
             id="password"
@@ -79,7 +81,7 @@ export const FirstStep = ({ onSuccess }) => {
             error={shouldShowError('password', formik)}
             helperText={
               shouldShowError('password', formik)
-              && i18n(formik.errors.password)
+              && <T9n t={formik.errors.password} />
             }
           />
           <div className="flex-center">
@@ -87,12 +89,12 @@ export const FirstStep = ({ onSuccess }) => {
               onChange={onRecaptchaChange}
               sitekey="6LfMfIcaAAAAAMLjS9J0yLsudH5cWfaWY1edFlfa"
               theme={theme.palette.type}
-              hl="uk"
+              hl={lang === 'ENG' ? 'en' : 'uk'}
             />
           </div>
           {shouldShowError('isCaptchaCompleted', formik) && (
             <FormHelperText error variant="filled">
-              {i18n(formik.errors.isCaptchaCompleted)}
+              <T9n t={formik.errors.isCaptchaCompleted} />
             </FormHelperText>
           )}
           <Button
@@ -102,18 +104,18 @@ export const FirstStep = ({ onSuccess }) => {
             color="primary"
             className={classes.submit}
           >
-            {i18n('SIGN_IN')}
+            <T9n t="SIGN_IN" />
           </Button>
         </form>
         {/* <Grid container>
           <Grid item xs>
             <Link href="/" variant="body2">
-              {i18n('FORGOT_PASSWORD')}
+              <T9n t="FORGOT_PASSWORD" />
             </Link>
           </Grid>
           <Grid item>
             <Link href="/" variant="body2">
-              {i18n('GO_TO_SIGN_UP')}
+              <T9n t="GO_TO_SIGN_UP" />
             </Link>
           </Grid>
         </Grid> */}

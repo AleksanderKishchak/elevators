@@ -15,6 +15,8 @@ const secondStepLogin = {
   SEND_CODE: 'Надіслати код підтвердження',
   REQUEST_ERROR: 'Щось пішло не так. Будь ласка спробуйте ще раз.',
   RELOAD_PAGE: 'Перезавантажити',
+  LANGS_ENG: 'АНГЛ',
+  LANGS_UKR: 'УКР',
 };
 
 const generalInfo = {
