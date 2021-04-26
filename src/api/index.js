@@ -39,7 +39,8 @@ const baseFetch = (endpoint, method = 'GET', body = null) => {
     });
 };
 
-const delayMs = 2000;
+const delayMs = process.env.NODE_ENV === 'production' ? 0 : 2000;
+// const delayMs = 0;
 
 // eslint-disable-next-line no-unused-vars
 export const postLogin = (login, pass) => delay(0).then(() => {

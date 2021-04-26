@@ -20,7 +20,7 @@ const secondStepLogin = {
 };
 
 const generalInfo = {
-  APP_NAME: 'Лифти',
+  APP_NAME: 'Ліфти',
   SWITCH_THEME: 'Переключити світлу/темну тему',
   GO_TO_MY_ACC: 'Особистий кабінет',
   GO_TO_MY_BUILDINGS: 'Мої Будівлі',
