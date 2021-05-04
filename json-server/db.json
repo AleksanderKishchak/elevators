@@ -125,6 +125,55 @@
       "entranceId": 6
     }
   ],
+  "keys": [
+    {
+      "id": 0,
+      "name": "8bfaf26b-6e87-4d9e-ba72-0b97b5d7ce9a",
+      "isActive": false
+    },
+    {
+    "id": 1,
+    "name": "4552770b-b3ed-4ee1-a27f-ec8952ba785f",
+    "isActive": false
+  }, {
+    "id": 2,
+    "name": "1bc039fd-87eb-4c9b-8da5-2d0d0b3669d6",
+    "isActive": false
+  }, {
+    "id": 3,
+    "name": "02381e39-102e-4451-8724-a447825a0421",
+    "isActive": false
+  }, {
+    "id": 4,
+    "name": "c388389b-9ffd-41e3-9937-d7a364efbd47",
+    "isActive": true
+  }, {
+    "id": 5,
+    "name": "360adcf4-8016-4c1f-b52d-fd6884fe0e09",
+    "isActive": false
+  }, {
+    "id": 6,
+    "name": "170a3997-abd5-4a1e-a63c-842096cc6de8",
+    "isActive": true
+  }, {
+    "id": 7,
+    "name": "01fe40f8-5563-47b2-960b-c5ac5121069b",
+    "isActive": true
+  }, {
+    "id": 8,
+    "name": "9130de50-dd97-4a3b-b2b0-2b1968bdf279",
+    "isActive": false
+  }, {
+    "id": 9,
+    "name": "7a2902d1-db84-4357-afe1-c924f1d279c4",
+    "isActive": false
+  },
+    {
+      "id": 10,
+      "name": "7a3902d1-db84-4357-afe1-c924f1d279c4",
+      "isActive": true
+    }
+  ],
   "users": [
     {
       "id": 0,
@@ -132,6 +181,7 @@
       "firstName": "Ivan 0",
       "lastName": "Ivanov 0",
       "apartmentId": 0,
+      "keys":[0, 9],
       "status": {
         "isPaid": true
       }
@@ -147,6 +197,7 @@
       "firstName": "Ivan 1",
       "lastName": "Ivanov 1",
       "apartmentId": 1,
+      "keys": [1, 10],
       "status": {
         "isPaid": true
       }
@@ -157,6 +208,7 @@
       "firstName": "Ivan 2",
       "lastName": "Ivanov 2",
       "apartmentId": 2,
+      "keys": [2],
       "status": {
         "isPaid": false
       }
@@ -167,6 +219,7 @@
       "firstName": "Ivan 3",
       "lastName": "Ivanov 3",
       "apartmentId": 3,
+      "keys": [3],
       "status": {
         "isPaid": true
       }
@@ -177,6 +230,7 @@
       "firstName": "Ivan 4",
       "lastName": "Ivanov 4",
       "apartmentId": 4,
+      "keys": [4],
       "status": {
         "isPaid": false
       }
@@ -187,6 +241,7 @@
       "firstName": "Ivan 5",
       "lastName": "Ivanov 5",
       "apartmentId": 5,
+      "keys": [5],
       "status": {
         "isPaid": true
       }
@@ -197,6 +252,7 @@
       "firstName": "Ivan 6",
       "lastName": "Ivanov 6",
       "apartmentId": 6,
+      "keys": [6],
       "status": {
         "isPaid": false
       }
@@ -207,6 +263,7 @@
       "firstName": "Ivan 7",
       "lastName": "Ivanov 7",
       "apartmentId": 7,
+      "keys": [7],
       "status": {
         "isPaid": true
       }
@@ -217,6 +274,7 @@
       "firstName": "Ivan 8",
       "lastName": "Ivanov 8",
       "apartmentId": 8,
+      "keys": [8],
       "status": {
         "isPaid": false
       }
