@@ -62,7 +62,7 @@ export const FirstStep = ({ onSuccess }) => {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             error={shouldShowError('email', formik)}
-            helperText={<T9n t={formik.errors.email} />}
+            helperText={formik.errors.email && <T9n t={formik.errors.email} />}
           />
           <TextField
             className={classes.marginBottom}

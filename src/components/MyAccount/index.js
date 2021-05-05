@@ -22,7 +22,10 @@ export const MyAccount = () => {
         floor: data.apartment.floor,
       },
       peopleLive: data.apartment.peopleLive,
-      status: user.status.isPaid,
+      keys: data.keys,
+      status: {
+        isPaid: user.status.isPaid,
+      },
     }),
   );
 

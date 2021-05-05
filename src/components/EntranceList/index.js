@@ -42,6 +42,7 @@ export const EntranceList = () => {
   const {
     apartmentsData,
     fetchApartments,
+    updateApartmentData,
   } = useApartmentsData();
 
   if (!entrancesData && !error) {
@@ -103,6 +104,7 @@ export const EntranceList = () => {
                   entrance={entrance}
                   apartmentsData={apartmentsData[entrance.id]}
                   fetchApartments={fetchApartments}
+                  updateApartmentData={updateApartmentData}
                 />
               ))}
             </TableBody>

@@ -23,7 +23,6 @@ export const useRequest = ({
       setData(responseTransformer(response) || null);
     }).catch((error) => {
       if (unmounted) return;
-
       setError(error);
     });
   }, [fetch, responseTransformer, trigger]);

@@ -29,8 +29,26 @@ export const useApartmentsData = () => {
       });
   }, []);
 
+  const updateApartmentData = useCallback((entranceId, apartmentId, bulkData) => {
+    setApartmentsData((prev) => {
+      const newApartments = prev[entranceId].data.map((apartment) => {
+        if (apartment.id !== apartmentId) return apartment;
+
+        return bulkData;
+      });
+
+      return {
+        ...prev,
+        [entranceId]: {
+          data: newApartments,
+        },
+      };
+    });
+  }, [setApartmentsData]);
+
   return {
     apartmentsData,
     fetchApartments,
+    updateApartmentData,
   };
 };

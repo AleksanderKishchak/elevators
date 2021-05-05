@@ -30,6 +30,7 @@ export const Row = ({
   entrance,
   apartmentsData,
   fetchApartments,
+  updateApartmentData,
 }) => {
   const [open, setOpen] = useState(false);
   const classes = useRowStyles();
@@ -57,6 +58,7 @@ export const Row = ({
                 entranceId={entrance.id}
                 apartmentsData={apartmentsData}
                 fetchApartments={fetchApartments}
+                updateApartmentData={updateApartmentData}
               />
             </Box>
           </Collapse>
@@ -76,6 +78,7 @@ Row.propTypes = {
     error: PropTypes.shape({}),
   }),
   fetchApartments: PropTypes.func.isRequired,
+  updateApartmentData: PropTypes.func.isRequired,
 };
 
 Row.defaultProps = {

@@ -1,7 +1,10 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
+import IconButton from '@material-ui/core/IconButton';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 import { T9n } from '../../T9n';
 
@@ -9,6 +12,7 @@ export const Row = ({
   apartment: {
     floor, name, peopleLive, user,
   },
+  showKeysModal,
 }) => (
   <TableRow>
     <TableCell align="center">{name}</TableCell>
@@ -21,6 +25,14 @@ export const Row = ({
       {user?.status?.isPaid
         ? <T9n t="STATUS_PAID" />
         : <T9n t="STATUS_UNPAID" />}
+    </TableCell>
+    <TableCell align="center">
+      <IconButton
+        variant="contained"
+        onClick={showKeysModal}
+      >
+        <VpnKeyIcon />
+      </IconButton>
     </TableCell>
   </TableRow>
 );
@@ -39,4 +51,5 @@ Row.propTypes = {
       }),
     }),
   }).isRequired,
+  showKeysModal: PropTypes.func.isRequired,
 };

@@ -39,6 +39,21 @@ const myAccTable = {
   ROW_ADDRESS_PEOPLE_LIVE: 'Persons registered',
   STATUS_PAID: 'Paid',
   STATUS_UNPAID: 'Not Paid',
+  ROW_SHOW_KEYS: 'See your keys',
+};
+
+const keysModal = {
+  KEYS_MODAL_TITLE: 'Your keys',
+  KEYS_MODAL_ADMIN_TITLE: 'Keys of: ',
+  KEYS_MODAL_KEY: 'Key',
+  KEYS_MODAL_STATUS: 'Status',
+  KEYS_MODAL_ACTIVE: 'Active',
+  KEYS_MODAL_INACTIVE: 'Not Active',
+  KEYS_MODAL_REVOKE: 'Revoke',
+  KEYS_MODAL_GRANT: 'Grant',
+  KEY_MODAL_SAVE_NEW: 'Save',
+  KEYS_MODAL_ADD_BTN: 'Add key',
+  KEYS_MODAL_KEY_EXAMPLE: 'Example: 8888-4444-baaa-0b97b5d7ce9a',
 };
 
 const buildingsTable = {
@@ -69,4 +84,5 @@ export default {
   ...myAccTable,
   ...buildingsTable,
   ...entrancesTable,
+  ...keysModal,
 };

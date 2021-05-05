@@ -38,6 +38,21 @@ const myAccTable = {
   ROW_ADDRESS_PEOPLE_LIVE: 'Людей проживає',
   STATUS_PAID: 'Сплачено',
   STATUS_UNPAID: 'Не сплачено',
+  ROW_SHOW_KEYS: 'Переглянути ключi',
+};
+
+const keysModal = {
+  KEYS_MODAL_TITLE: 'Ваші ключі',
+  KEYS_MODAL_ADMIN_TITLE: 'Ключі: ',
+  KEYS_MODAL_KEY: 'Ключ',
+  KEYS_MODAL_STATUS: 'Статус',
+  KEYS_MODAL_ACTIVE: 'Активний',
+  KEYS_MODAL_INACTIVE: 'Не активний',
+  KEYS_MODAL_REVOKE: 'Деактивувати',
+  KEYS_MODAL_GRANT: 'Активувати',
+  KEY_MODAL_SAVE_NEW: 'Зберегти',
+  KEYS_MODAL_ADD_BTN: 'Додати ключ',
+  KEYS_MODAL_KEY_EXAMPLE: 'Приклад: 8888-4444-baaa-0b97b5d7ce9a',
 };
 
 const buildingsTable = {
@@ -68,4 +83,5 @@ export default {
   ...myAccTable,
   ...buildingsTable,
   ...entrancesTable,
+  ...keysModal,
 };

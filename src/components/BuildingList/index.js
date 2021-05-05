@@ -32,7 +32,7 @@ export const BuildingList = ({
 
   const renderList = () => (
     <TableContainer component={Paper}>
-      <Table aria-label="collapsible table">
+      <Table aria-label="buildings list">
         <TableHead>
           <TableRow>
             <TableCell className={classes.firstColumn}>

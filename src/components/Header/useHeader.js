@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 import { useIsAdmin } from '../../hooks/config.hooks';
 import { useAppState } from '../../hooks/useAppState';
 
 export const useHeader = () => {
+  const [,, removeCookie] = useCookies(['token']);
   const history = useHistory();
   const location = useLocation();
   const isAdmin = useIsAdmin();
@@ -36,6 +38,7 @@ export const useHeader = () => {
   const logOut = () => {
     setUser(null);
     setAccessAllowed(false);
+    removeCookie('token');
     handleClose();
   };
 

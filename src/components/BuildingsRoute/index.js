@@ -38,7 +38,7 @@ export const BuildingRoute = () => {
           size="large"
           color="primary"
           variant="contained"
-          aria-label="large contained primary button group"
+          aria-label="view switcher"
         >
           <Button
             onClick={setView(true)}

@@ -183,20 +183,32 @@
     {
       "id": 9,
       "name": "7a2902d1-db84-4357-afe1-c924f1d279c4",
-      "isActive": false
+      "isActive": true
     },
     {
       "id": 10,
       "name": "7a3902d1-db84-4357-afe1-c924f1d279c4",
       "isActive": true
+    },
+    {
+      "isActive": false,
+      "name": "123123123",
+      "id": 11,
+      "isDeleted": true
+    },
+    {
+      "isActive": false,
+      "name": "123",
+      "id": 12,
+      "isDeleted": true
     }
   ],
   "users": [
     {
       "id": 0,
       "isAdmin": false,
-      "firstName": "Ivan 0",
-      "lastName": "Ivanov 0",
+      "firstName": "Hiba",
+      "lastName": "Spooner",
       "apartmentId": 0,
       "keys": [
         0,
@@ -214,8 +226,8 @@
         1,
         2
       ],
-      "firstName": "Ivan 1",
-      "lastName": "Ivanov 1",
+      "firstName": "Cleo",
+      "lastName": "Shea",
       "apartmentId": 1,
       "keys": [
         1,
@@ -228,8 +240,8 @@
     {
       "id": 2,
       "isAdmin": false,
-      "firstName": "Ivan 2",
-      "lastName": "Ivanov 2",
+      "firstName": "Thelma",
+      "lastName": "Stuart",
       "apartmentId": 2,
       "keys": [
         2
@@ -241,8 +253,8 @@
     {
       "id": 3,
       "isAdmin": false,
-      "firstName": "Ivan 3",
-      "lastName": "Ivanov 3",
+      "firstName": "Chloe-Louise",
+      "lastName": "Ryan",
       "apartmentId": 3,
       "keys": [
         3
@@ -254,8 +266,8 @@
     {
       "id": 4,
       "isAdmin": false,
-      "firstName": "Ivan 4",
-      "lastName": "Ivanov 4",
+      "firstName": "Yara",
+      "lastName": "Harper",
       "apartmentId": 4,
       "keys": [
         4
@@ -267,8 +279,8 @@
     {
       "id": 5,
       "isAdmin": false,
-      "firstName": "Ivan 5",
-      "lastName": "Ivanov 5",
+      "firstName": "Kenny",
+      "lastName": "Hollis",
       "apartmentId": 5,
       "keys": [
         5
@@ -280,8 +292,8 @@
     {
       "id": 6,
       "isAdmin": false,
-      "firstName": "Ivan 6",
-      "lastName": "Ivanov 6",
+      "firstName": "Mindy",
+      "lastName": "Cuevas",
       "apartmentId": 6,
       "keys": [
         6
@@ -293,8 +305,8 @@
     {
       "id": 7,
       "isAdmin": false,
-      "firstName": "Ivan 7",
-      "lastName": "Ivanov 7",
+      "firstName": "Yusha",
+      "lastName": "Farrow",
       "apartmentId": 7,
       "keys": [
         7
@@ -306,8 +318,8 @@
     {
       "id": 8,
       "isAdmin": false,
-      "firstName": "Ivan 8",
-      "lastName": "Ivanov 8",
+      "firstName": "Shelley",
+      "lastName": "Branch",
       "apartmentId": 8,
       "keys": [
         8

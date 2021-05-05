@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
 
 import TableHead from '@material-ui/core/TableHead';
@@ -15,13 +14,27 @@ import { Row } from './Row';
 import { CenteredContainer } from '../CenteredContainer';
 import { ErrorMessage } from '../ErrorMessage';
 import { T9n } from '../T9n';
+import { KeysModal } from '../KeysModal';
+import { AdminRow } from '../KeysModal/AdminRow';
+import { useApartmentsTable } from './useApartmentsTable';
+import { AddKeyRow } from '../KeysModal/AddKeyRow';
 
 export const ApartmentTable = ({
   entranceId,
   apartmentsData,
   fetchApartments,
+  updateApartmentData,
 }) => {
   const { error, data } = apartmentsData || {};
+  const {
+    onUpdateKeys,
+    onDeleteKey,
+    onAddKey,
+    openModal,
+    keyModalParams,
+    resetModalParams,
+    modalTitle,
+  } = useApartmentsTable({ apartmentsData, updateApartmentData });
 
   useEffect(() => {
     if (!error && !data) {
@@ -57,22 +70,57 @@ export const ApartmentTable = ({
   }
 
   return (
-    <Table size="small" aria-label="purchases">
-      <TableHead>
-        <TableRow>
-          <TableCell align="center"><T9n t="APARTMENTS_TABLE_NUMBER" /></TableCell>
-          <TableCell align="center"><T9n t="APARTMENTS_TABLE_FLOOR" /></TableCell>
-          <TableCell align="center"><T9n t="APARTMENTS_TABLE_PEOPLE_LIVE" /></TableCell>
-          <TableCell align="center"><T9n t="APARTMENTS_TABLE_OWNER_NAME" /></TableCell>
-          <TableCell align="center"><T9n t="APARTMENTS_TABLE_STATUS" /></TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {map(data, ((apartment) => (
-          <Row key={apartment.id} apartment={apartment} />
-        )))}
-      </TableBody>
-    </Table>
+    <>
+      <KeysModal
+        onClose={resetModalParams}
+        isOpen={!!keyModalParams}
+        title={modalTitle}
+        headerCells={(
+          <>
+            <TableCell>
+              <T9n t="KEYS_MODAL_KEY" />
+            </TableCell>
+            <TableCell align="right">
+              <T9n t="KEYS_MODAL_STATUS" />
+            </TableCell>
+            <TableCell align="right" />
+            <TableCell align="right" />
+          </>
+        )}
+      >
+        {(keyModalParams?.keys || []).map((key) => (
+          <AdminRow
+            key={key.name}
+            keyData={key}
+            onUpdate={() => onUpdateKeys(keyModalParams, key)}
+            onDelete={() => onDeleteKey(keyModalParams, key.id)}
+          />
+        ))}
+        <AddKeyRow onSubmit={onAddKey(keyModalParams || {})} />
+      </KeysModal>
+
+      <Table size="small" aria-label="apartments list">
+        <TableHead>
+          <TableRow>
+            <TableCell align="center"><T9n t="APARTMENTS_TABLE_NUMBER" /></TableCell>
+            <TableCell align="center"><T9n t="APARTMENTS_TABLE_FLOOR" /></TableCell>
+            <TableCell align="center"><T9n t="APARTMENTS_TABLE_PEOPLE_LIVE" /></TableCell>
+            <TableCell align="center"><T9n t="APARTMENTS_TABLE_OWNER_NAME" /></TableCell>
+            <TableCell align="center"><T9n t="APARTMENTS_TABLE_STATUS" /></TableCell>
+            <TableCell align="center" />
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((apartment) => (
+            <Row
+              key={apartment.id}
+              apartment={apartment}
+              showKeysModal={openModal(apartment)}
+            />
+          ))}
+        </TableBody>
+      </Table>
+    </>
   );
 };
 
@@ -83,6 +131,7 @@ ApartmentTable.propTypes = {
     error: PropTypes.shape({}),
   }),
   fetchApartments: PropTypes.func.isRequired,
+  updateApartmentData: PropTypes.func.isRequired,
 };
 
 ApartmentTable.defaultProps = {
