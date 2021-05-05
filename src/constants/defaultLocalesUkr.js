@@ -71,6 +71,7 @@ const entrancesTable = {
   APARTMENTS_TABLE_NUMBER: 'Номер квартири',
   APARTMENTS_TABLE_PEOPLE_LIVE: 'Кількість людей',
   APARTMENTS_TABLE_STATUS: 'Статус оплати',
+  APARTMENTS_TABLE_SETTINGS: 'Налаштування ключiв',
   APARTMENTS_TABLE_OWNER_NAME: 'Ім\'я Власника',
   EMPTY_APARTMENTS_LIST: 'У цьому під’їзді немає квартир',
   EMPTY_ENTRANCES_LIST: 'У цієї будівлі немає під’їздів',

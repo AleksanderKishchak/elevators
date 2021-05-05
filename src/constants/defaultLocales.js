@@ -72,6 +72,7 @@ const entrancesTable = {
   APARTMENTS_TABLE_NUMBER: 'Apartment number',
   APARTMENTS_TABLE_PEOPLE_LIVE: 'Number of People',
   APARTMENTS_TABLE_STATUS: 'Payment status',
+  APARTMENTS_TABLE_SETTINGS: 'Keys Settings',
   APARTMENTS_TABLE_OWNER_NAME: 'Owner Name',
   EMPTY_APARTMENTS_LIST: 'There is no apartments in this entrance',
   EMPTY_ENTRANCES_LIST: 'There is no entrances in this building',

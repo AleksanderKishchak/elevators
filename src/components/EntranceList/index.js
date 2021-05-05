@@ -11,7 +11,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-
 import { getEntrances } from '../../api';
 import { CenteredContainer } from '../CenteredContainer';
 import { Row } from './Row';
@@ -19,6 +18,7 @@ import { useRequestOnMount } from '../../hooks/useRequestOnMount';
 import { ErrorMessage } from '../ErrorMessage';
 import { useApartmentsData } from '../../hooks/useApartmentsData';
 import { T9n } from '../T9n';
+import { NavPanel } from '../NavPanel';
 
 const useStyles = makeStyles({
   title: {
@@ -31,6 +31,15 @@ const useStyles = makeStyles({
   fab: {
     float: 'left',
     transform: 'translateX(80px)',
+  },
+  icon: {
+    transform: 'rotate(180deg)',
+  },
+  link: {
+    textDecoration: 'none',
+    position: 'fixed',
+    top: 100,
+    left: 100,
   },
 });
 
@@ -78,6 +87,7 @@ export const EntranceList = () => {
   return (
     <div className="table-container">
       <CenteredContainer>
+        <NavPanel />
         <TableContainer component={Paper}>
           <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
             <T9n t="BUILDINGS_STREET_TITLE" />

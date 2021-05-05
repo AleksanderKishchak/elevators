@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { makeStyles/* , useTheme */ } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -24,6 +25,12 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
+  link: {
+    display: 'inline-flex',
+    textDecoration: 'none',
+    color: 'white',
+    alignItems: 'center',
+  },
 }));
 
 export const Header = () => {
@@ -44,11 +51,15 @@ export const Header = () => {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Toolbar>
-        <ElevatorIcon id="elevator-icon" />
+        <div className={classes.title}>
+          <Link to="/" className={classes.link}>
+            <ElevatorIcon id="elevator-icon" />
 
-        <Typography variant="h6" className={classes.title}>
-          <T9n t="APP_NAME" />
-        </Typography>
+            <Typography variant="h6">
+              <T9n t="APP_NAME" />
+            </Typography>
+          </Link>
+        </div>
         {/* <Tooltip title={i18n('SWITCH_THEME')} arrow>
           <IconButton
             color="inherit"

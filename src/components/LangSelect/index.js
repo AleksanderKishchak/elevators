@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
@@ -12,8 +12,9 @@ import { LANGS } from '../../constants';
 import { useLangs } from '../../hooks/useLangs';
 import { T9n } from '../T9n';
 
-const WhiteIcon = () => (
-  <KeyboardArrowDownIcon style={{ color: 'white' }} />
+const WhiteIcon = (props) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
+  <KeyboardArrowDownIcon {...props} style={{ color: 'white' }} />
 );
 
 const useStyles = makeStyles((theme) => ({
@@ -26,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     transitionDuration: theme.transitions.duration.shortest,
     borderRadius: '4px',
   },
+  pointer: {
+    cursor: 'pointer',
+  },
 }));
 
 const BootstrapInput = withStyles((theme) => ({
@@ -33,6 +37,7 @@ const BootstrapInput = withStyles((theme) => ({
     'label + &': {
       marginTop: theme.spacing(3),
     },
+    cursor: 'pointer',
   },
   input: {
     fontSize: theme.typography.fontSize,
@@ -51,6 +56,7 @@ const BootstrapInput = withStyles((theme) => ({
 
 export const LangSelect = () => {
   const { lang, setLang } = useLangs();
+  const [open, setOpen] = useState();
   const classes = useStyles();
 
   return (
@@ -60,12 +66,22 @@ export const LangSelect = () => {
       displayEmpty
       className={classes.root}
       inputProps={{ 'aria-label': 'Without label' }}
-      IconComponent={WhiteIcon}
+      IconComponent={() => <WhiteIcon onClick={() => setOpen(true)} />}
+      open={open}
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      native={false}
       input={(
         <BootstrapInput
           startAdornment={(
-            <InputAdornment position="start">
-              <LanguageIcon style={{ color: 'white' }} />
+            <InputAdornment
+              onClick={() => setOpen(true)}
+              position="start"
+              className={classes.pointer}
+            >
+              <LanguageIcon
+                style={{ color: 'white' }}
+              />
             </InputAdornment>
           )}
         />

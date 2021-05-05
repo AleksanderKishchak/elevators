@@ -13,6 +13,7 @@ import { Footer } from '../Footer';
 import { Header } from '../Header';
 
 import './App.css';
+import { useIsAdmin } from '../../hooks/config.hooks';
 
 const LogInForm = lazy(() => import('../Login'));
 const MyAccount = lazy(() => import('../MyAccount'));
@@ -21,6 +22,8 @@ const EntranceList = lazy(() => import('../EntranceList'));
 const NotFoundPage = lazy(() => import('../NotFoundPage'));
 
 function App() {
+  const isAdmin = useIsAdmin();
+
   return (
     <Router>
       <Header />
@@ -33,7 +36,11 @@ function App() {
         </Route>
 
         <ProtectedRoute exact path="/">
-          <Redirect to="/my-account" />
+          {
+            isAdmin
+              ? <Redirect to="/buildings" />
+              : <Redirect to="/my-account" />
+          }
         </ProtectedRoute>
 
         <ProtectedRoute exact forAdminOnly path="/buildings">

@@ -58,6 +58,10 @@ export const KeysModal = ({
       onClose={onClose}
       aria-labelledby="dialogTitle"
       classes={{ paper: classes.paper }}
+      transitionDuration={{
+        enter: theme.transitions.duration.enteringScreen,
+        exit: 0,
+      }}
     >
       <DialogTitle id="dialogTitle" className={classes.dialogTitle}>
         <Typography variant="inherit">
