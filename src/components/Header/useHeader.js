@@ -21,11 +21,9 @@ export const useHeader = () => {
   const isPath = (url) => location.pathname.includes(url);
 
   const isLogin = isPath('/login');
-  const isMyAcc = isPath('/my-account');
-  const isMyBuildings = isPath('/buildings');
 
-  const shouldShowGoToMyAccBtn = !isLogin && !isMyAcc;
-  const showMyBuildingsBtn = !isLogin && !isMyBuildings && isAdmin;
+  const shouldShowGoToMyAccBtn = !isLogin && isAdmin;
+  const showMyBuildingsBtn = !isLogin && isAdmin;
 
   const handleClose = () => {
     setAnchorEl(null);

@@ -41,12 +41,14 @@ export const BuildingRoute = () => {
           aria-label="view switcher"
         >
           <Button
+            aria-label="list view"
             onClick={setView(true)}
             color={isListView ? 'primary' : 'default'}
           >
             <ListIcon />
           </Button>
           <Button
+            aria-label="map view"
             onClick={setView(false)}
             color={!isListView ? 'primary' : 'default'}
           >
