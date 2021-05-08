@@ -34,11 +34,17 @@ export const NavPanel = () => {
   return (
     <Container>
       <Paper elevation={0} square className={classes.paper}>
-        <Button onClick={() => history.goBack()}>
+        <Button
+          aria-label="go back button"
+          onClick={() => history.goBack()}
+        >
           <ArrowRightAltIcon className={classes.arrowLeft} />
         </Button>
 
-        <Button onCanPlay={() => history.goForward()}>
+        <Button
+          aria-label="go forward button"
+          onClick={() => history.goForward()}
+        >
           <ArrowRightAltIcon />
         </Button>
       </Paper>
