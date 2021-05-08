@@ -56,7 +56,7 @@ const BootstrapInput = withStyles((theme) => ({
 
 export const LangSelect = () => {
   const { lang, setLang } = useLangs();
-  const [open, setOpen] = useState();
+  const [open, setOpen] = useState(false);
   const classes = useStyles();
 
   return (

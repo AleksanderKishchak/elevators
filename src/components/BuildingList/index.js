@@ -16,6 +16,7 @@ import { CenteredContainer } from '../CenteredContainer';
 import { ErrorMessage } from '../ErrorMessage';
 import { BuildingPropType } from '../BuildingsMap/Marker';
 import { T9n } from '../T9n';
+import { PageName } from '../PageName';
 
 const useStyles = makeStyles({
   firstColumn: {
@@ -64,6 +65,10 @@ export const BuildingList = ({
   return (
     <div className="table-container">
       <CenteredContainer>
+        <PageName>
+          <T9n t="BUILDINGS_PAGE" />
+        </PageName>
+
         {(!error && !buildings) && <CircularProgress />}
         {(error && !buildings) && <ErrorMessage onClick={forceUpdate} />}
         {buildings && renderList()}

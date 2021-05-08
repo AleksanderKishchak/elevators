@@ -60,6 +60,7 @@ const buildingsTable = {
   BUILDINGS_STREET_TITLE: 'Вулиця',
   BUILDINGS_POST_CODE_TITLE: 'Поштовий індекс',
   BUILDINGS_GO_TO_ENTRANCES: 'Переглянути під\'їзди',
+  BUILDINGS_PAGE: 'Вашi будинки',
 };
 
 const entrancesTable = {

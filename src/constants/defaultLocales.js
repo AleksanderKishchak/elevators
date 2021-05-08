@@ -61,6 +61,7 @@ const buildingsTable = {
   BUILDINGS_STREET_TITLE: 'Street',
   BUILDINGS_POST_CODE_TITLE: 'Post code',
   BUILDINGS_GO_TO_ENTRANCES: 'See entrances',
+  BUILDINGS_PAGE: 'Your Buildings',
 };
 
 const entrancesTable = {

@@ -19,6 +19,7 @@ import { ErrorMessage } from '../ErrorMessage';
 import { useApartmentsData } from '../../hooks/useApartmentsData';
 import { T9n } from '../T9n';
 import { NavPanel } from '../NavPanel';
+import { PageName } from '../PageName';
 
 const useStyles = makeStyles({
   title: {
@@ -88,6 +89,9 @@ export const EntranceList = () => {
     <div className="table-container">
       <CenteredContainer>
         <NavPanel />
+        <PageName>
+          <T9n t="ENTRANCE_TABLE_NAME" />
+        </PageName>
         <TableContainer component={Paper}>
           <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
             <T9n t="BUILDINGS_STREET_TITLE" />
@@ -99,9 +103,7 @@ export const EntranceList = () => {
           <Table aria-label="collapsible table">
             <TableHead>
               <TableRow>
-                <TableCell className={classes.firstCell}>
-                  <T9n t="ENTRANCE_TABLE_NAME" />
-                </TableCell>
+                <TableCell className={classes.firstCell} />
                 <TableCell>
                   <T9n t="ENTRANCE_TABLE_ENTRANCE_COLUMN" />
                 </TableCell>
