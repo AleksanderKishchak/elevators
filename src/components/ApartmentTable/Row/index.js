@@ -10,16 +10,23 @@ import { T9n } from '../../T9n';
 
 export const Row = ({
   apartment: {
-    floor, name, peopleLive, user,
+    name, user, usersInFlat,
   },
   showKeysModal,
 }) => (
   <TableRow>
     <TableCell align="center">{name}</TableCell>
-    <TableCell align="center" component="th" scope="row">
-      {floor}
+    <TableCell align="left">
+      {usersInFlat?.map((user, idx) => (
+        <div>
+          {idx + 1}
+          {'. '}
+          {user.firstName}
+          {' '}
+          {user.lastName}
+        </div>
+      )) || '-'}
     </TableCell>
-    <TableCell align="center">{peopleLive}</TableCell>
     <TableCell align="center">{`${user.firstName} ${user.lastName}`}</TableCell>
     <TableCell align="center">
       {user?.status?.isPaid
@@ -37,19 +44,22 @@ export const Row = ({
   </TableRow>
 );
 
+const userPT = PropTypes.shape({
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  status: PropTypes.shape({
+    isPaid: PropTypes.bool.isRequired,
+  }),
+});
+
 Row.propTypes = {
   apartment: PropTypes.shape({
     id: PropTypes.number.isRequired,
     floor: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     peopleLive: PropTypes.number.isRequired,
-    user: PropTypes.shape({
-      firstName: PropTypes.string.isRequired,
-      lastName: PropTypes.string.isRequired,
-      status: PropTypes.shape({
-        isPaid: PropTypes.bool.isRequired,
-      }),
-    }),
+    user: userPT,
+    usersInFlat: PropTypes.arrayOf(userPT),
   }).isRequired,
   showKeysModal: PropTypes.func.isRequired,
 };

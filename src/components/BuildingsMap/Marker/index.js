@@ -24,8 +24,6 @@ export const BuildingMarker = ({ building }) => {
       <Popup>
         <Typography>
           {building.street}
-          ,
-          {building.postCode}
         </Typography>
         <Button onClick={onClick}>
           <T9n t="BUILDINGS_GO_TO_ENTRANCES" />

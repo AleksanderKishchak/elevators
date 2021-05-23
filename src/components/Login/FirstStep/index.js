@@ -27,7 +27,7 @@ const shouldShowError = (fieldName, formik) => (
 export const FirstStep = ({ onSuccess }) => {
   const classes = useStyles();
   const theme = useTheme();
-  const { lang } = useLangs();
+  const { lang, locale } = useLangs();
   const {
     formik,
     isLoading,
@@ -56,13 +56,14 @@ export const FirstStep = ({ onSuccess }) => {
             id="email"
             name="email"
             autoComplete="email"
-            type="email"
+            type="tel"
             autoFocus
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
             error={shouldShowError('email', formik)}
             helperText={formik.errors.email && <T9n t={formik.errors.email} />}
+            placeholder={locale.get('LOGIN_PLACEHOLDER')}
           />
           <TextField
             className={classes.marginBottom}

@@ -29,7 +29,6 @@ export const MyDataTable = ({ users }) => {
             <TableCell><T9n t="ROW_NAME" /></TableCell>
             <TableCell><T9n t="ROW_ADDRESS_STREET" /></TableCell>
             <TableCell><T9n t="ROW_ADDRESS_ENTRANCE" /></TableCell>
-            <TableCell><T9n t="ROW_ADDRESS_FLOOR" /></TableCell>
             <TableCell><T9n t="ROW_ADDRESS_FLAT" /></TableCell>
             <TableCell><T9n t="ROW_ADDRESS_PEOPLE_LIVE" /></TableCell>
             <TableCell><T9n t="ROW_STATUS_IS_PAID" /></TableCell>

@@ -45,7 +45,8 @@ const delayMs = process.env.NODE_ENV === 'production' ? 0 : 0;
 
 // eslint-disable-next-line no-unused-vars
 export const postLogin = (login, pass) => delay(delayMs).then(() => {
-  const userId = login === 'admin@gmail.com' ? 1 : 0;
+  // const userId = login === 'admin@gmail.com' ? 1 : 0;
+  const userId = new RegExp('0954289684').test(login) ? 1 : 0;
 
   return (
     baseFetch(`users/${userId}`)
@@ -88,8 +89,8 @@ export const getEntrances = (buildingId) => delay(delayMs).then(() => (
 
 export const getApartments = (entranceId) => delay(delayMs).then(async () => {
   const apartments = await baseFetch(`apartments?entranceId=${entranceId}`);
-  const userIds = apartments.map((a) => a.userId);
-  const idParams = `id=${userIds.join('&id=')}`;
+  const apartmentIds = apartments.map((a) => a.id);
+  const idParams = `apartmentId=${apartmentIds.join('&apartmentId=')}`;
 
   const users = await baseFetch(`users?${idParams}`);
 
@@ -103,10 +104,12 @@ export const getApartments = (entranceId) => delay(delayMs).then(async () => {
 
   return apartments?.map((a) => {
     const user = usersMap[a.userId];
+    const usersInFlat = users.filter((u) => a.id === u.apartmentId);
 
     return {
       ...a,
       user,
+      usersInFlat,
       keys: keys
         .filter(({ isDeleted }) => !isDeleted)
         .filter((key) => user.keys.includes(key.id)),

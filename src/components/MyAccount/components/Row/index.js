@@ -20,7 +20,6 @@ export const Row = ({
       <TableCell>{`${rowData.firstName} ${rowData.lastName}`}</TableCell>
       <TableCell>{rowData.address.street}</TableCell>
       <TableCell>{rowData.address.entrance}</TableCell>
-      <TableCell>{rowData.address.floor}</TableCell>
       <TableCell>{rowData.address.room}</TableCell>
       <TableCell>{rowData.peopleLive}</TableCell>
       <TableCell>

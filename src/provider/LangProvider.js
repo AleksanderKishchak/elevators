@@ -8,7 +8,7 @@ import { createLocale } from '../utils/locale';
 const langKey = 'lang';
 
 export const LangProvider = ({ children }) => {
-  const defaultLang = localStorage.getItem(langKey) || LANGS.ENG;
+  const defaultLang = localStorage.getItem(langKey) || LANGS.UKR;
   const [lang, _setLang] = useState(defaultLang);
 
   const setLang = useCallback((lang) => {

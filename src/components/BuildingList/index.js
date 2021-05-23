@@ -11,12 +11,14 @@ import TableRow from '@material-ui/core/TableRow';
 import { makeStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+import { TextField } from '@material-ui/core';
 import { Row } from './Row';
 import { CenteredContainer } from '../CenteredContainer';
 import { ErrorMessage } from '../ErrorMessage';
 import { BuildingPropType } from '../BuildingsMap/Marker';
 import { T9n } from '../T9n';
 import { PageName } from '../PageName';
+import { useLangs } from '../../hooks/useLangs';
 
 const useStyles = makeStyles({
   firstColumn: {
@@ -28,8 +30,11 @@ export const BuildingList = ({
   buildings,
   error,
   forceUpdate,
+  searchText,
+  handleSearchChange,
 }) => {
   const classes = useStyles();
+  const { locale } = useLangs();
 
   const renderList = () => (
     <TableContainer component={Paper}>
@@ -41,9 +46,6 @@ export const BuildingList = ({
             </TableCell>
             <TableCell align="left">
               <T9n t="BUILDINGS_STREET_TITLE" />
-            </TableCell>
-            <TableCell>
-              <T9n t="BUILDINGS_POST_CODE_TITLE" />
             </TableCell>
             <TableCell align="right" />
           </TableRow>
@@ -67,6 +69,14 @@ export const BuildingList = ({
       <CenteredContainer>
         <PageName>
           <T9n t="BUILDINGS_PAGE" />
+          <TextField
+            label={<T9n t="SEARCH_LABEL" />}
+            placeholder={locale.get('SEARCH_PLACEHOLDER')}
+            variant="outlined"
+            value={searchText}
+            onChange={handleSearchChange}
+            size="small"
+          />
         </PageName>
 
         {(!error && !buildings) && <CircularProgress />}
@@ -81,6 +91,8 @@ BuildingList.propTypes = {
   buildings: PropTypes.arrayOf(BuildingPropType),
   error: PropTypes.oneOf([null, PropTypes.object]),
   forceUpdate: PropTypes.func.isRequired,
+  searchText: PropTypes.string.isRequired,
+  handleSearchChange: PropTypes.func.isRequired,
 };
 
 BuildingList.defaultProps = {

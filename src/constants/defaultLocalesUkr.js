@@ -1,7 +1,12 @@
 const firstStepLogin = {
   SIGN_IN: 'Увійти',
   LOG_OUT: 'Вийти',
-  EMAIL_ADDRESS_LABEL: 'Електронна адреса',
+  EMAIL_ADDRESS_LABEL: 'Номер телефону',
+  LOGIN_PLACEHOLDER: '+380123456789',
+  SHOULD_HAVE_COUNTRY_CODE: 'Номер повинен мiстити код країни',
+  SHOULD_BE_12_CHAR_LONG: 'Номер повинен мати 12 цифр',
+  SEARCH_LABEL: 'Пошук за вулицею',
+  SEARCH_PLACEHOLDER: 'Введiть назву вулицi',
   PASSWORD_LABEL: 'Пароль',
   FORGOT_PASSWORD: 'Вiдновити пароль',
   GO_TO_SIGN_UP: 'Зареєструватись',
@@ -70,7 +75,7 @@ const entrancesTable = {
 
   APARTMENTS_TABLE_FLOOR: 'Поверх',
   APARTMENTS_TABLE_NUMBER: 'Номер квартири',
-  APARTMENTS_TABLE_PEOPLE_LIVE: 'Кількість людей',
+  APARTMENTS_TABLE_PEOPLE_LIVE: 'Люди у цiй квартирi',
   APARTMENTS_TABLE_STATUS: 'Статус оплати',
   APARTMENTS_TABLE_SETTINGS: 'Налаштування ключiв',
   APARTMENTS_TABLE_OWNER_NAME: 'Ім\'я Власника',

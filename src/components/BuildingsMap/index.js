@@ -1,3 +1,4 @@
+/* eslint-disable */
 import PropTypes from 'prop-types';
 import {
   MapContainer,
@@ -27,7 +28,7 @@ export const BuildingsMap = ({
   }
 
   const bounds = buildings
-    ? getBounds(buildings.map((b) => b.coords))
+    ? getBounds(buildings?.map((b) => b.coords))
     : {};
 
   return (
@@ -38,7 +39,7 @@ export const BuildingsMap = ({
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <MoveMap buildings={buildings} bounds={bounds} />
-        {buildings?.map((building) => (<BuildingMarker building={building} key={building.id} />))}
+         {buildings?.map((building) => (<BuildingMarker building={building} key={building.id} />))}
       </MapContainer>
     </div>
   );

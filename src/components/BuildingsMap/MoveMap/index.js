@@ -7,7 +7,7 @@ export const MoveMap = ({
   const map = useMap();
 
   useEffect(() => {
-    if (buildings) {
+    if (buildings && bounds.flat().every((n) => Boolean(n) && Number.isFinite(n))) {
       map.fitBounds(bounds, {
         padding: [2, 2],
       });

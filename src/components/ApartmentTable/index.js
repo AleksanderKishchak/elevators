@@ -103,8 +103,7 @@ export const ApartmentTable = ({
         <TableHead>
           <TableRow>
             <TableCell align="center"><T9n t="APARTMENTS_TABLE_NUMBER" /></TableCell>
-            <TableCell align="center"><T9n t="APARTMENTS_TABLE_FLOOR" /></TableCell>
-            <TableCell align="center"><T9n t="APARTMENTS_TABLE_PEOPLE_LIVE" /></TableCell>
+            <TableCell align="left"><T9n t="APARTMENTS_TABLE_PEOPLE_LIVE" /></TableCell>
             <TableCell align="center"><T9n t="APARTMENTS_TABLE_OWNER_NAME" /></TableCell>
             <TableCell align="center"><T9n t="APARTMENTS_TABLE_STATUS" /></TableCell>
             <TableCell align="center"><T9n t="APARTMENTS_TABLE_SETTINGS" /></TableCell>

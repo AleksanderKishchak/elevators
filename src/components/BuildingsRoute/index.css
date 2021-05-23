@@ -3,6 +3,7 @@
   right: 20px;
   top: 100px;
   z-index: 1;
+  display: flex;
 }
 
 @media screen and (max-width: 1560px) {

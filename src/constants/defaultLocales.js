@@ -1,8 +1,13 @@
 const firstStepLogin = {
   SIGN_IN: 'Sign in',
   LOG_OUT: 'Log out',
-  EMAIL_ADDRESS_LABEL: 'Email Address',
+  EMAIL_ADDRESS_LABEL: 'Phone number',
+  LOGIN_PLACEHOLDER: '+380123456789',
+  SHOULD_HAVE_COUNTRY_CODE: 'Your number must have the county code',
+  SHOULD_BE_12_CHAR_LONG: 'The phone number must have 12 characters',
   PASSWORD_LABEL: 'Password',
+  SEARCH_LABEL: 'Search buildings by address',
+  SEARCH_PLACEHOLDER: 'Start typing an address',
   REMEMBER_ME_LABEL: 'Remember me',
   FORGOT_PASSWORD: 'Forgot password?',
   GO_TO_SIGN_UP: 'Don\'t have an account? Sign Up',
@@ -71,7 +76,7 @@ const entrancesTable = {
 
   APARTMENTS_TABLE_FLOOR: 'Floor',
   APARTMENTS_TABLE_NUMBER: 'Apartment number',
-  APARTMENTS_TABLE_PEOPLE_LIVE: 'Number of People',
+  APARTMENTS_TABLE_PEOPLE_LIVE: 'People in this flat',
   APARTMENTS_TABLE_STATUS: 'Payment status',
   APARTMENTS_TABLE_SETTINGS: 'Keys Settings',
   APARTMENTS_TABLE_OWNER_NAME: 'Owner Name',

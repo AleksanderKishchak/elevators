@@ -10,6 +10,11 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     marginBottom: theme.spacing(1),
   },
+  centered: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
 }));
 
 export const PageName = ({
@@ -19,7 +24,7 @@ export const PageName = ({
 
   return (
     <Paper className={classes.paper} elevation={1}>
-      <Typography variant="h4">
+      <Typography variant="h4" className={classes.centered}>
         {children}
       </Typography>
     </Paper>

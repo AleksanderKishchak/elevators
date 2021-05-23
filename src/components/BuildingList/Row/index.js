@@ -31,7 +31,6 @@ export const Row = ({
       <TableCell component="th" scope="row">
         {building.street}
       </TableCell>
-      <TableCell>{building.postCode}</TableCell>
       <TableCell align="right">
         <Button variant="contained" onClick={goToEntrances}>
           <T9n t="BUILDINGS_GO_TO_ENTRANCES" />
