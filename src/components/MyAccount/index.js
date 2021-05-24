@@ -26,7 +26,7 @@ export const MyAccount = () => {
         room: data.apartment.name,
         floor: data.apartment.floor,
       },
-      peopleLive: data.apartment.peopleLive,
+      users: data.users,
       keys: data.keys,
       status: {
         isPaid: user.status.isPaid,

@@ -68,15 +68,18 @@ export const getUserData = (userId) => delay(delayMs).then(() => baseFetch(`user
   }
 
   const apartmentData = await baseFetch(`apartments/${user.apartmentId}`);
+  const usersPromise = baseFetch(`users?apartmentId=${apartmentData.id}`);
   const entranceData = await baseFetch(`entrances/${apartmentData.entranceId}`);
   const buildingData = await baseFetch(`buildings/${entranceData.buildingId}`);
   const keysData = await keysDataPromise;
+  const usersData = await usersPromise;
 
   return {
     apartment: apartmentData,
     entrance: entranceData,
     building: buildingData,
     keys: keysData.filter(({ isDeleted }) => !isDeleted),
+    users: usersData,
   };
 }));
 

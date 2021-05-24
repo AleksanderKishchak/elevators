@@ -30,7 +30,7 @@ export const MyDataTable = ({ users }) => {
             <TableCell><T9n t="ROW_ADDRESS_STREET" /></TableCell>
             <TableCell><T9n t="ROW_ADDRESS_ENTRANCE" /></TableCell>
             <TableCell><T9n t="ROW_ADDRESS_FLAT" /></TableCell>
-            <TableCell><T9n t="ROW_ADDRESS_PEOPLE_LIVE" /></TableCell>
+            <TableCell><T9n t="APARTMENTS_TABLE_PEOPLE_LIVE" /></TableCell>
             <TableCell><T9n t="ROW_STATUS_IS_PAID" /></TableCell>
             <TableCell />
           </TableRow>

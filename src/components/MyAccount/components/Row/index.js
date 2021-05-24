@@ -21,7 +21,17 @@ export const Row = ({
       <TableCell>{rowData.address.street}</TableCell>
       <TableCell>{rowData.address.entrance}</TableCell>
       <TableCell>{rowData.address.room}</TableCell>
-      <TableCell>{rowData.peopleLive}</TableCell>
+      <TableCell>
+        {rowData.users?.map((user, idx) => (
+          <div>
+            {idx + 1}
+            {'. '}
+            {user.firstName}
+            {' '}
+            {user.lastName}
+          </div>
+        )) || '-'}
+      </TableCell>
       <TableCell>
         {rowData.status.isPaid
           ? <T9n t="STATUS_PAID" />
@@ -48,6 +58,14 @@ export const Row = ({
   );
 };
 
+const userPT = PropTypes.shape({
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  status: PropTypes.shape({
+    isPaid: PropTypes.bool.isRequired,
+  }),
+});
+
 Row.propTypes = {
   rowData: PropTypes.shape({
     firstName: PropTypes.string.isRequired,
@@ -67,5 +85,6 @@ Row.propTypes = {
       name: PropTypes.string.isRequired,
       isActive: PropTypes.bool.isRequired,
     })).isRequired,
+    users: PropTypes.arrayOf(userPT),
   }).isRequired,
 };

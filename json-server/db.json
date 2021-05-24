@@ -219,6 +219,17 @@
       }
     },
     {
+      "id": 0,
+      "isAdmin": false,
+      "firstName": "Николай",
+      "lastName": "Василев",
+      "apartmentId": 0,
+      "keys": [],
+      "status": {
+        "isPaid": true
+      }
+    },
+    {
       "id": 1,
       "isAdmin": true,
       "buildingId": [
@@ -246,6 +257,17 @@
       "keys": [
         2
       ],
+      "status": {
+        "isPaid": false
+      }
+    },
+    {
+      "id": 2,
+      "isAdmin": false,
+      "firstName": "Иван",
+      "lastName": "Сидоров",
+      "apartmentId": 2,
+      "keys": [],
       "status": {
         "isPaid": false
       }
@@ -311,6 +333,17 @@
       "keys": [
         7
       ],
+      "status": {
+        "isPaid": true
+      }
+    },
+    {
+      "id": 7,
+      "isAdmin": false,
+      "firstName": "Лена",
+      "lastName": "Кирова",
+      "apartmentId": 7,
+      "keys": [],
       "status": {
         "isPaid": true
       }
