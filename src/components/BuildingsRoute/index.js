@@ -28,7 +28,7 @@ export const BuildingRoute = () => {
   const [searchText, setSearchText] = useState('');
   const filteredBuildings = !buildings
     ? undefined
-    : buildings.filter((bldg) => new RegExp(searchText).test(bldg.street));
+    : buildings.filter((bldg) => new RegExp(searchText, 'i').test(bldg.street));
 
   const handleChane = ({ target }) => {
     setSearchText(target.value);
@@ -59,7 +59,7 @@ export const BuildingRoute = () => {
             />
           </Paper>
         )}
-        <div style={{ width: '10px' }} />
+        <div style={{ width: '10px', height: '10px' }} />
         <ButtonGroup
           size="large"
           color="primary"

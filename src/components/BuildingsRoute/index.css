@@ -13,4 +13,11 @@
     position: static;
     margin: 24px 24px 0;
   }
+
+  .view-switch {
+    flex-direction: column;
+    align-items: flex-end;
+    top: 70px;
+    right: 10px;
+  }
 }
