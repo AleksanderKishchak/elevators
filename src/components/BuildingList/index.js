@@ -67,7 +67,7 @@ export const BuildingList = ({
   return (
     <div className="table-container">
       <CenteredContainer>
-        <PageName>
+        <PageName hasInput>
           <T9n t="BUILDINGS_PAGE" />
           <TextField
             label={<T9n t="SEARCH_LABEL" />}

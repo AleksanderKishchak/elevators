@@ -97,8 +97,6 @@ export const EntranceList = () => {
             <T9n t="BUILDINGS_STREET_TITLE" />
             {': '}
             {entrancesData.street}
-            {', '}
-            {entrancesData.postCode}
           </Typography>
           <Table aria-label="collapsible table">
             <TableHead>
