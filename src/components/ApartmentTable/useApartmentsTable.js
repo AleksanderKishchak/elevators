@@ -30,7 +30,6 @@ export const useApartmentsTable = ({
     try {
       changedKey = await patchKey(key.id, !key.isActive);
     } catch (error) {
-      console.error(error);
     }
 
     const newApartment = apartmentsData.data.find(({ id }) => id === apartmentId);
