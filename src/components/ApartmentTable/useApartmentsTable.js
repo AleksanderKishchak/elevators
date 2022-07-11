@@ -27,10 +27,8 @@ export const useApartmentsTable = ({
 
   const onUpdateKeys = async ({ entranceId, apartmentId }, key) => {
     let changedKey = null;
-    try {
-      changedKey = await patchKey(key.id, !key.isActive);
-    } catch (error) {
-    }
+
+    changedKey = await patchKey(key.id, !key.isActive);
 
     const newApartment = apartmentsData.data.find(({ id }) => id === apartmentId);
 
