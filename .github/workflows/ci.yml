@@ -21,5 +21,5 @@ jobs:
         run: node ./.github/workflows/test.js
         env:
           TEST: test env variable
-          RELEASE: ${{ github.event.release }}
+          RELEASE: echo "${{ github.event.release }}"
 
