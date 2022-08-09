@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: '12.x'
       - name: Test step
-        run: node ./test.js
+        run: node test.js
