@@ -1,6 +1,6 @@
 const releaseDescription = process.env.RELEASE;
 
-const taskRegExp = /https:\/\/pdffiller\.atlassian\.net\/browse\/[A-Z]{3,5}-\d{2,4}/g
+const taskRegExp = /https:\/\/pdffiller\.atlassian\.net\/browse\/[A-Z]{2,5}-\d{2,4}/g
 const uniq = (arr) => Array.from(new Set(arr))
 const getTaskIdFromUrl = (url) => url.split('/').pop()
 
