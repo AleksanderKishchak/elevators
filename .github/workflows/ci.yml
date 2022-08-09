@@ -13,9 +13,12 @@ jobs:
         node-version: [12.x]
     steps:
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '12.x'
       - uses: actions/checkout@v3
       - name: Test step
         run: node ./.github/workflows/test.js
+        env:
+          TEST: test env variable
+
