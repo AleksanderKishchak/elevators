@@ -1,25 +1,20 @@
-name: CI
+name: Publish release link to Jira
 
-on: [pull_request]
+on:
+  release:
+    types: [created]
 
 jobs:
   build:
-    name: CI
+    name: Test
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: npm install
-        run: npm install
-      - uses: preactjs/compressed-size-action@v2
-        name: check bundle size
-        with:
-          build-script: "build"
-          clean-script: "clean"
-          pattern: "./build/static/js/**/*.js"
+      - name: Test step
+        run: echo "release created"

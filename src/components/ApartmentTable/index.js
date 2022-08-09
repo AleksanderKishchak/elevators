@@ -118,6 +118,15 @@ export const ApartmentTable = ({
             />
           ))}
         </TableBody>
+        <TableBody>
+          {data.map((apartment) => (
+            <Row
+              key={apartment.id}
+              apartment={apartment}
+              showKeysModal={openModal(apartment)}
+            />
+          ))}
+        </TableBody>
       </Table>
     </>
   );
