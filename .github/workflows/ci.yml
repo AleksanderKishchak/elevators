@@ -17,9 +17,14 @@ jobs:
         with:
           node-version: '12.x'
       - uses: actions/checkout@v3
+      - name: Install node-fetch
+      - run: npm i node-fetch@2
       - name: Test step
-        run: node ./.github/workflows/test.js
         env:
-          RELEASE_BODY: "${{ github.event.release.body }}"
-          RELEASE_LINK: "${{ github.event.release.html_url }}"
+          RELEASE_BODY: ${{ github.event.release.body }}
+          RELEASE_LINK: ${{ github.event.release.html_url }}
+          JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+          JIRA_API_TOKENS: ${{ secrets.JIRA_API_TOKENS }}
+        run: node ./.github/workflows/test.js
+
 
