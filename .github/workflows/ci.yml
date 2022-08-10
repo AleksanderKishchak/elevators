@@ -20,5 +20,6 @@ jobs:
       - name: Test step
         run: node ./.github/workflows/test.js
         env:
-          RELEASE: "${{ github.event.release.body }}"
+          RELEASE_BODY: "${{ github.event.release.body }}"
+          RELEASE_LINK: "${{ github.event.release.html_url }}"
 

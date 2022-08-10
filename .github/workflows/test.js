@@ -1,4 +1,5 @@
-const releaseDescription = process.env.RELEASE;
+const releaseDescription = process.env.RELEASE_BODY;
+const releaseLink = process.env.RELEASE_LINK;
 
 const taskRegExp = /https:\/\/pdffiller\.atlassian\.net\/browse\/[A-Z]{2,5}-\d{2,4}/g
 const uniq = (arr) => Array.from(new Set(arr))
@@ -13,3 +14,4 @@ const getTasksIds = description => {
 const taskIds = getTasksIds(releaseDescription);
 
 console.log(taskIds)
+console.log(releaseLink)
