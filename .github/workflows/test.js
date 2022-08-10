@@ -36,9 +36,10 @@ const toJiraCommentStructure = commentText => ({
 })
 
 const addComment = (taskId, comment) => {
-  return fetch({
-    url: `https://pdffiller.atlassian.net/rest/api/3/issue/${taskId}/comment`,
-    method: 'POST',
+  console.log('request url ==', `https://pdffiller.atlassian.net/rest/api/3/issue/${taskId}/comment`)
+
+  return fetch(`https://pdffiller.atlassian.net/rest/api/3/issue/${taskId}/comment`, {
+    method: 'post',
     headers: {
       'Authorization': getAuthHeader(),
       'Accept': 'application/json',
