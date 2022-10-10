@@ -6,6 +6,7 @@ on:
 
 jobs:
   build:
+    environment: RC
     name: Test
     runs-on: ubuntu-latest
     strategy:
@@ -17,8 +18,8 @@ jobs:
         with:
           node-version: '12.x'
       - uses: actions/checkout@v3
-      - name: Install node-fetch
-        run: npm i node-fetch@2
+#      - name: Install node-fetch
+#        run: npm i node-fetch@2
       - name: Test step
         env:
           RELEASE_BODY: ${{ github.event.release.body }}
