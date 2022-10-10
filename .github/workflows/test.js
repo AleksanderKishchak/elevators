@@ -1,4 +1,4 @@
-console.log('Hello World');
+console.log('Hello World, ' + process.env.MESSAGE);
 
 /*const fetch = require('node-fetch');
 

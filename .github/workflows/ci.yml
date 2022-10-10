@@ -1,8 +1,13 @@
 name: Publish release link to Jira
 
 on:
-  release:
-    types: [created]
+  workflow_dispatch:
+    inputs:
+      message:
+        type: string
+        required: true
+        default: Alex
+        description: type your message
 
 jobs:
   build:
@@ -26,6 +31,7 @@ jobs:
           RELEASE_LINK: ${{ github.event.release.html_url }}
           JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
           JIRA_API_TOKENS: ${{ secrets.JIRA_API_TOKENS }}
+          MESSAGE: ${{ github.event.inputs.message }}
         run: node ./.github/workflows/test.js
 
 
